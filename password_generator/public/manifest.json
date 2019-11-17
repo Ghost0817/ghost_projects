@@ -1,0 +1,49 @@
+{
+    "name": "Strong Random Password Generator",
+    "short_name": "Strong Random Password Generator",
+    "lang": "en-US",
+    "description": "Our generator is online tool that automatically creates a strong password that is as secure as possible against hacking. Create password in a click",
+    "icons": [{
+      "src": "/img/icons/icon-128x128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }, {
+        "src": "/img/icons/Square150x150Logo.scale-100.png",
+        "sizes": "150x150"
+      }, {
+        "src": "/img/icons/Square44x44Logo.scale-100.png",
+        "sizes": "44x44"
+      }, {
+        "src": "/img/icons/StoreLogo.scale-100.png",
+        "sizes": "50x50"
+      }, {
+        "src": "/img/icons/icon.svg",
+        "sizes": "any",
+        "type": "image/svg"
+      }],
+    "start_url": "/?ref=homescreen",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#f2f0eb",
+    "theme_color": "#fbc11d"
+  }

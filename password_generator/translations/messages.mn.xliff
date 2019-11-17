@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Password generator - create a secure, random passwords</source>
+                <target>Нууц үг үүсгэгч - аюулгүй байдлыг бий болгох, санамсаргүй нууц үг үүсгэх</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Our online random password generator helps create a strong passwords that is as secure as possible against hacking. Create complex passwords in a click!</source>
+                <target>Манай онлайн санамсаргүй нууц үг үүсгэгч нь хакердахын эсрэг аль болох найдвартай, хүчтэй нууц үг үүсгэхэд тусалдаг. Дархад ээдрээтэй нууц үг үүсгэнэ!</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Password Length</source>
+                <target>Нууц Үгийн Урт</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>min</source>
+                <target>доод</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>max</source>
+                <target>дээд</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Include Uppercase</source>
+                <target>Том Үсэг Оруулах</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Include Lowercase</source>
+                <target>Жижиг Үсэг Оруулах</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Include Numbers</source>
+                <target>Тоо Оруулах</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Include Characters</source>
+                <target>Тэмдэгт Оруулах</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Exclude Ambiguous</source>
+                <target>Хоёрдмол утгатайг хасах</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Exclude Similar</source>
+                <target>Жижил зүйлийг хасах</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Auto-Select The Password</source>
+                <target>Нууц үгийг Автоматаар Сонгох</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Save My Preference</source>
+                <target>Миний Сонголтийг Хадгалах</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Generate</source>
+                <target>Үүсгэх</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Your new password</source>
+                <target>Таны шинэ нууц үг</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>copy</source>
+                <target>хуулах</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>send to email</source>
+                <target>И-Мэйл рүү илгээх</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>How can I ever remember a random password?</source>
+                <target>Би санамсаргүй нууц үгийг хэрхэн санах вэ?</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Good passwords are long and random. The problem lies in the fact that people do not create long random passwords badly. That is why you need password managers such as:</source>
+                <target>Сайн нууц үгүүд нь урт ба санамсаргүй байдаг. Асуудал нь хүмүүс муухан урт санамсаргүй нууц үг үүсгэдэггүй дээр байгаа. Тийм учраас танд нууц үг удирдагч хэрэгтэй тухайлбал:</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>LastPass remembers all your passwords, so you don't have to.</source>
+                <target>LastPass бүх нууц үгийг санадаг тул та заавал санах шаардлагагүй юм.</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Save your passwords and log in to sites with a single click.</source>
+                <target>Таны нууц үгүүдыг хадгалах ба нэг даралтаар сайтууд руу нэвтэрнэ.</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>Simple way to store and fill passwords and personal information.</source>
+                <target>Нууц үг бөглөх болон хувийн мэдээлэл хадгалах энгийн аргатай.</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Creates complex passwords when you need them.</source>
+                <target>Та хэрэгтэй бол ээдрээтэй нууц үг үүсгэнэ.</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>You’ll never need to remember or type your passwords again.</source>
+                <target>Та хэзээ ч санах эсвэл нууц үг дахин бичих шаардлагагүй болно.</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>Autofill forms in a second. Use your passwords wherever you go.</source>
+                <target>Секундын дотор автоматаар бөглөнө. Өөрийн нууц үгийг хаанаас ч ашиглах боломжтой.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Frequently asked questions</source>
+                <target>Түгээмэл Асуултууд</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>How do password generators work?</source>
+                <target>Нууц үг үүсгэгч хэрхэн ажилладаг вэ?</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>Are password generators safe?</source>
+                <target>Нууц үг үүсгэгч аюулгүй юу?</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>Absolutely! All passwords created using a password generator are generated locally on your computer. They are not saved and are not transmitted anywhere. No one can see the password you create. Just remember to close this page as soon as you have generated and copied your password so that someone else will not see it.</source>
+                <target>Мэдээжийн хэрэг! Нууц үг үүсгэгч ашиглан үүсгэсэн бүх нууц үгс нь таны компьютер дээр боловсорогдсон байдаг. Тэд хадгалагдахгүй бөгөөд хаашаа ч дамжуулагдчихгүй. Таны үүсгэсэн нууц үгийг хэн ч харж чадахгүй. Өөр хэн нэгэн үүнийг харж чадахгүй байлгахын тулд та энэ нууц үгээ үүсгэснийг хуулж тавьсны дараа үүнийг хаахаа мартуузай.</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>Why should I use a password generator?</source>
+                <target>Би яагаад нууц үг үүсгэгч ашиглах ёстой вэ?</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>Because people are really bad at inventing real random passwords. People often use words or numbers that mean something to them: the name of the pet, the mother’s maiden name, the birthdays of their children, the lyrics, etc. The problem is that you get passwords that are easy to guess.</source>
+                <target>Учир нь хүмүүс бодит санамсаргүй нууц үгийг зохиоход үнэхээр муу байдаг. Хүмүүс үргэлж өөрт нь ямар нэгэн утгатай үг, тоо хэрэглэдэг: гэрийн тэжээвэр амьтны нэр, ээжийн нэр, үр хүүхдийнхээ төрсөн өдөр, дууны үгс гэх мэт. Асуудал нь та өөрөө таахад хялбар нууц үг олж авахад оршино.</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>What is a Random Password Generator?</source>
+                <target>Санамсаргүй Нууц үг Үүсгэгч гэж юу вэ?</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>Random password generator is a online application that automatically creates a random, secure passwords. Reliable generators always make passwords that meet these requirements:</source>
+                <target>Санамсаргүй нууц үг үүсгэгч нь санамсаргүй ба аюулгүй нууц үгийг автоматаар үүсгэдэг онлайн програм юм. Найдвартай үүсгэгч нь эдгээр шаардлагыг хангасан нууц үгийг үргэлж хийдэг:</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>To be long and unique</source>
+                <target>Урт ба өвөрмөц байх</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>The password must contain letters, numbers, and other special symbols. Password must be at least 12 symbols long.</source>
+                <target>Нууц үг нь үсэг, тоо болон бусад тусгай тэмдэгтүүдийг агуулсан байх ёстой. Нууц үг хамгийн багадаа 12 тэмдэгтээс бүрдэх ёстой.</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>Surely to use PRNG</source>
+                <target>PRNG ашиглах нь гарцаагүй</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>PRNG is a pseudo-random number generator, with the help of which a sequence of symbols, numbers and letters is formed.</source>
+                <target>PRNG бол хиймэл санамсаргүй тоон үүсгэгч бөгөөд түүний тусламжтайгаар тэмдэг, тоо, үсэгний дараалал үүсдэг.</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>Generate locally</source>
+                <target>Өөр дээрээ боловсорогдсон</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>The password must be generated locally on the computer / device of the user. Actually, our service works exactly the same way.</source>
+                <target>Нууц үг хэрэглэгчийн компьютер / төхөөрөмжид дээр локал хэлбэрээр үүсгэх ёстой. Ер нь манай үйлчилгээ яг ижилхэн ажилладаг.</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>Useful Internet security tips</source>
+                <target>Интернетийн аюулгүй байдлын талаар хэрэгтэй зөвлөгөө</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>Attach a mobile phone</source>
+                <target>Гар утас хавсаргах</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>Be sure to link your mobile phone to your account, if the service allows. At the moment, this is the most reliable way to recover a password.</source>
+                <target>Хэрэв үйлчилгээ нь зөвшөөрдөг бол гар утсаа бүртгэлдээ холбосон эсэхээ шалгаарай. Одоогийн байдлаар энэ бол нууц үгийг сэргээх хамгийн найдвартай арга юм.</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>Include two-factor authentication</source>
+                <target>Хоёр дахь нэвтрэлтийг багтаадаг</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>In case the service supports this option, connect it to further protect your account.</source>
+                <target>Хэрэв үйлчилгээ нь энэ сонголтыг дэмжиж байвал, дансаа хамгаалахын тулд холбоно уу.</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>Avoid simple passwords</source>
+                <target>Энгийн нууц үгнээс зайлсхийх</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Avoid short and popular passwords that consist of sequences on the keyboard (qwerty) or easily alternate (1q2w3e)</source>
+                <target>Гар дээрх дараалал (qwerty) эсвэл хялбархан орлуулах (1q2w3e) гэсэн богино, түгээмэл нууц үгнээс зайлсхийх хэрэгтэй.</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>Do not use personal data in the password</source>
+                <target>Нууц үгэндээ хувийн мэдээллийг бүү ашигла</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>Never use the password names of your beloved and acquaintances, phone numbers and addresses, birthdays, licenses numbers, and other personal information.</source>
+                <target>Нууц үгэнд хайртай, танил хүмүүсийн нэр, утасны дугаар, хаяг, төрсөн өдөр, лицензийн дугаар болон бусад хувийн мэдээллийг хэзээ ч бүү ашиглаарай.</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>Use unique passwords</source>
+                <target>Өвөрмөц нууц үг ашиглах</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Create a unique password for each of your accounts and do not use it when registering with other sites.</source>
+                <target>Таны бүртгэл бүр дээр дахин давташгүй нууц үг зохиож, бусад сайтад бүртгүүлэхдээ үүнийг бүү ашиглаарай.</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>Change the password periodically</source>
+                <target>Нууц үгээ үе үе өөрчлөх</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>Take the habit of changing your password for critically important data at least once every three months.</source>
+                <target>Маш чухал мэдээлэлд зориулж нууц үгээ гурван сард дор хаяж нэг удаа өөрчлөх зуршилтай байхыг зөвлөж байна.</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>Use antivirus software</source>
+                <target>Вирусны эсрэг програм хангамж ашиглах</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Use the switched on antivirus on your computer and do not prevent it from updating.</source>
+                <target>Компьютер дээрээ ассан антивирусыг ашиглах бөгөөд шинэчлэлээс урьдчилан сэргийлэх хэрэггүй.</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>Do not allow browsers to save passwords</source>
+                <target>Хөтөчүүдэд нууц үг хадгалахыг зөвшөөрөхгүй байх</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>Do not use auto save in browsers, because saved passwords in the browser are easy to identify. In addition, a person who uses your device will also have access to your account.</source>
+                <target>Учир нь хөтөчид хадгалсан нууц үгийг тодорхойлоход хялбар байдаг тул хөтөч дээр автоматаар хадгалах горимыг бүү ашиглаарай. Үүнээс гадна, таны төхөөрөмжийг ашигладаг хүн таны дансанд нэвтрэх эрхтэй болно.</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>Fake pages of popular sites</source>
+                <target>Алдартай сайтуудын хуурамч хуудас</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>Be careful when entering your login and password on the sites, look at the address and make sure that this is the very site. At the beginning of the address you will see a confirmation that you are in a secure connection https: //.</source>
+                <target>Нэвтрэх нэр, нууц үгээ сайтууд дээр оруулахдаа анхааралтай хандаж, хаягийг нь шалгаад энэ сайт мөн эсэхийг шалгаарай. Хаягны эхэнд та аюулгүй холболт байгаа гэдгээ https: // харж баталгаажуулна.</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>Use an SSL connection</source>
+                <target>SSL холболтыг ашиглах</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>Do not pass important information to unprotected HTTP or FTP protocols, because information in these connections can be easily intercepted.</source>
+                <target>Хамгаалагдаагүй HTTP эсвэл FTP протоколуудад чухал мэдээллийг бүү дамжуулж байгаарай, учир нь эдгээр холболтууд дахь мэдээллийг хялбархан тасалдуулж болно.</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>Use the incognito mode in your browser</source>
+                <target>Өөрийн вэб хөтчид нууцлалын горимыг ашиглах</target>
+            </trans-unit>
+            <trans-unit id="63">
+                <source>When you visit important for you sites, it is advisable to do it in incognito mode, so you can protect yourself from unwanted cookies and tracking.</source>
+                <target>Таны хувьд чухал сайтууд руу зочлох үед үүнийг нууцлалын горимоор хийхийг зөвлөж байна, ингэснээр та хүсээгүй cookie-нүүд, хянахаас өөрийгөө хамгаалах боломжтой.</target>
+            </trans-unit>
+            <trans-unit id="64">
+                <source>Be more careful with the services of capturing the picture from the screen</source>
+                <target>Дэлгэцээс зургийг авах үйлчилгээнд илүү болгоомжтой хандах хэрэгтэй</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>Very often, all users of the Internet have access to screenshots made through such services.</source>
+                <target>Маш олон удаа интернетийн бүх хэрэглэгчид ийм үйлчилгээгээр дамжуулан дэлгэцийн зураг авах боломжтой байдаг.</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="70">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="72">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+            <trans-unit id="73">
+                <source>or</source>
+                <target>эсвэл</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

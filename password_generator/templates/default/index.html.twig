@@ -1,0 +1,241 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Need a strong password? — Random Password Generator{% endblock %}
+{% block stylesheets %}{% endblock %}
+{% block body %}
+<div class="generator">
+			<div class="generator-top">
+				<h1>{% trans %}Password generator - create a secure, random passwords{% endtrans %}</h1>
+				<br>
+				<p>{% trans %}Our online random password generator helps create a strong passwords that is as secure as possible against hacking. Create complex passwords in a click!{% endtrans %}</p>
+				<div class="generator-top-inner">
+						<div class="password-options">
+							<p class="password-length-caption">{% trans %}Password Length{% endtrans %}</p>
+						
+							<div class="password-length-items">
+								<div>
+									<input id="opt_random_min" name="opt_random_min" type="number" class="option" min="3" step="1" max="15" value="12">
+									<span>{% trans %}min{% endtrans %} 3</span>
+								</div>
+								<div class="mdash">—</div>
+								<div>								
+									<input id="opt_random_max" name="opt_random_max" type="number" class="option" min="4" step="1" max="16" value="16">
+									<span>{% trans %}max{% endtrans %} 16</span>
+								</div>
+							</div>
+						</div>
+		
+						<div class="password-options">
+							<fieldset class="custom-checkbox">
+								<input id="opt_uppercase" name="opt_uppercase" type="checkbox" checked="checked">
+								<label for="opt_uppercase">{% trans %}Include Uppercase{% endtrans %}: ABCDE...</label>
+								<span></span>
+							</fieldset>
+							
+							<fieldset class="custom-checkbox">
+								<input id="opt_lowercase" name="opt_lowercase" type="checkbox" checked="checked">
+								<label for="opt_lowercase">{% trans %}Include Lowercase{% endtrans %}: abcde...</label>
+								<span></span>
+							</fieldset>
+							<fieldset class="custom-checkbox">
+								<input id="opt_numbers" name="opt_numbers" type="checkbox" checked="checked">
+								<label for="opt_numbers">{% trans %}Include Numbers{% endtrans %}: 12345...</label>
+								<span></span>
+							</fieldset>
+							
+							<fieldset class="custom-checkbox">
+								<input id="opt_symbols" name="opt_symbols" type="checkbox" checked="checked">
+								<label for="opt_symbols">{% trans %}Include Characters{% endtrans %}: @#$%...</label>
+								<span></span>
+							</fieldset>				
+						</div>
+		
+						<div class="password-options">
+							<fieldset class="custom-checkbox">
+								<input id="opt_no_amb" name="opt_no_amb" type="checkbox">
+								<label for="opt_no_amb">{% trans %}Exclude Ambiguous{% endtrans %}: {} [] () /\ ' " ` ~ , ; : . &lt; &gt;</label>
+								<span></span>
+							</fieldset>
+							
+							<fieldset class="custom-checkbox">
+								<input id="opt_no_similar" name="opt_no_similar" type="checkbox" checked="checked">
+								<label for="opt_no_similar">{% trans %}Exclude Similar{% endtrans %}: i,l,1,L,o,0,O</label>
+								<span></span>
+							</fieldset>
+							
+							<fieldset class="custom-checkbox">
+								<input id="opt_autoselect" name="opt_autoselect" type="checkbox">
+								<label for="opt_autoselect">{% trans %}Auto-Select The Password{% endtrans %}</label>
+								<span></span>
+							</fieldset>
+							
+							<fieldset class="custom-checkbox">
+								<input id="opt_save" name="opt_save" type="checkbox" checked="checked">
+								<label for="opt_save" class="yellow">{% trans %}Save My Preference{% endtrans %}</label>
+								<span></span>
+							</fieldset>
+						</div>
+					</div>
+			</div>
+			<div class="generator-bottom">
+				<div class="btn-generate-container">
+					<button class="btn-generate" onclick='Password._init()'>{% trans %}Generate{% endtrans %}</button>
+				</div>
+				<div class="pass-container">
+					<input id="password" type="text" placeholder="{% trans %}Your new password{% endtrans %}...">
+					<button id="btnCopy">{% trans %}copy{% endtrans %}</button>
+					<span>{% trans %}or{% endtrans %}</span> 
+					<button id="btnSend">{% trans %}send to email{% endtrans %}</button>
+				</div>
+			</div>
+		</div>
+
+		<section class="article centered">
+			<h2 id="What-is-the-best-password-generator">{% trans %}How can I ever remember a random password?{% endtrans %}</h2>
+			<p class="textcenter">{% trans %}Good passwords are long and random. The problem lies in the fact that people do not create long random passwords badly. That is why you need password managers such as:{% endtrans %}</p>
+			<ul class="list-with-imgs">
+				<li>
+					<div class="pd-15">
+						<a href="https://www.lastpass.com/"><img src="/images/lastpass.png" alt="LastPass"></a>
+						<h3><a href="https://www.lastpass.com/">LastPass</a></h3>
+						<p>{% trans %}LastPass remembers all your passwords, so you don't have to.{% endtrans %}</p>
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<a href="https://1password.com/"><img src="/images/1Password.png" alt="1Password"></a>
+						<h3><a href="https://1password.com/">1Password</a></h3>
+						<p>{% trans %}Save your passwords and log in to sites with a single click.{% endtrans %}</p>
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<a href="https://www.dashlane.com/"><img src="/images/Dashlane.png" alt="Dashlane"></a>
+						<h3><a href="https://www.dashlane.com/">Dashlane</a></h3>
+						<p>{% trans %}Simple way to store and fill passwords and personal information.{% endtrans %}</p>
+					</div>
+				</li>
+			</ul>
+				
+			<ul class="list-with-imgs">
+				<li>
+					<div class="pd-15">
+						<a href="https://my.norton.com/extspa/passwordmanager"><img src="/images/Norton.png" alt="Norton"></a>
+						<h3><a href="https://my.norton.com/extspa/passwordmanager">Norton</a></h3>
+						<p>{% trans %}Creates complex passwords when you need them. {% endtrans %}</p>
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<a href="https://www.roboform.com/"><img src="/images/Roboform.png" alt="Roboform"></a>
+						<h3><a href="https://www.roboform.com/">Roboform</a></h3>
+						<p>{% trans %}You’ll never need to remember or type your passwords again.{% endtrans %}</p>
+						
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<a href="https://www.stickypassword.com/"><img src="/images/Sticky Password.png" alt="Sticky Password"></a>
+						<h3><a href="https://www.stickypassword.com/">Sticky Password</a></h3>
+						<p>{% trans %}Autofill forms in a second. Use your passwords wherever you go.{% endtrans %}</p>
+						
+					</div>
+				</li>	
+			</ul>
+				
+		</section>
+		<section class="article">
+			<img class="pd-15" src="/images/icons8-faq-64.png" alt="faq">
+			<h2 id="Password-generator-FAQs">{% trans %}Frequently asked questions{% endtrans %}</h2>				
+			<h3>{% trans %}How do password generators work?{% endtrans %}</h3>
+			<p>All passwords are generated on your device / browser (here Javascript source code and tutorial), they are unique and are created once and only for you. We do not have access to them, we do not keep records and do not save what generators create. Also you can use our extensions for <a href="https://chrome.google.com/webstore/detail/random-password-generator/nglmkmdjopoappmoalnapgfefblkhhke">Google Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/random-password-generator-org/">Mozilla Firefox</a>. Also you can download the app from the <a href="https://www.microsoft.com/en-us/p/strong-random-password-generator/9nfj7dwk0dtl">Microsoft Store</a>.</p>
+			
+			<h3>{% trans %}Are password generators safe?{% endtrans %}</h3>
+			<p>{% trans %}Absolutely! All passwords created using a password generator are generated locally on your computer. They are not saved and are not transmitted anywhere. No one can see the password you create. Just remember to close this page as soon as you have generated and copied your password so that someone else will not see it.{% endtrans %}</p>
+			
+			<h3>{% trans %}Why should I use a password generator?{% endtrans %}</h3>
+			<p>{% trans %}Because people are really bad at inventing real random passwords. People often use words or numbers that mean something to them: the name of the pet, the mother’s maiden name, the birthdays of their children, the lyrics, etc. The problem is that you get passwords that are easy to guess.{% endtrans %}</p>
+		</section>
+		<section class="article centered">
+			<h2 id="What-is-the-best-password-generator">{% trans %}What is a Random Password Generator?{% endtrans %}</h2>
+			<p class="textcenter">{% trans %}Random password generator is a online application that automatically creates a random, secure passwords. Reliable generators always make passwords that meet these requirements:{% endtrans %}</p>
+			<ul class="list-with-imgs">
+				<li>
+					<div class="pd-15">
+						<img src="/images/protect.png">
+						<h3>{% trans %}To be long and unique{% endtrans %}</h3>
+						<p>{% trans %}The password must contain letters, numbers, and other special symbols. Password must be at least 12 symbols long.{% endtrans %}</p>
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<img src="/images/quick.png">
+						<h3>{% trans %}Surely to use PRNG{% endtrans %}</h3>
+						<p>{% trans %}PRNG is a pseudo-random number generator, with the help of which a sequence of symbols, numbers and letters is formed.{% endtrans %}</p>
+					</div>
+				</li>
+				<li>
+					<div class="pd-15">
+						<img src="/images/monitor.png">
+						<h3>{% trans %}Generate locally{% endtrans %}</h3>
+						<p>{% trans %}The password must be generated locally on the computer / device of the user. Actually, our service works exactly the same way.{% endtrans %}</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="article">
+			<img class="pd-15" src="/images/icons8-hint-64.png" alt="tips">
+			<h2 id="Internet-safety-tips">{% trans %}Useful Internet security tips{% endtrans %}</h2>
+			<ul>
+				<li>
+					<h3 id="Attach-a-mobile-phone">{% trans %}Attach a mobile phone{% endtrans %}</h3>
+					<p>{% trans %}Be sure to link your mobile phone to your account, if the service allows. At the moment, this is the most reliable way to recover a password.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Include-two-factor-authentication">{% trans %}Include two-factor authentication{% endtrans %}</h3>
+					<p>{% trans %}In case the service supports this option, connect it to further protect your account.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Avoid-simple-passwords">{% trans %}Avoid simple passwords{% endtrans %}</h3>
+					<p>{% trans %}Avoid short and popular passwords that consist of sequences on the keyboard (qwerty) or easily alternate (1q2w3e){% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Do-not-use-personal-data-in-the-password">{% trans %}Do not use personal data in the password{% endtrans %}</h3>
+					<p>{% trans %}Never use the password names of your beloved and acquaintances, phone numbers and addresses, birthdays, licenses numbers, and other personal information.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Use-unique-passwords">{% trans %}Use unique passwords{% endtrans %}</h3>
+					<p>{% trans %}Create a unique password for each of your accounts and do not use it when registering with other sites.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Change-the-password-periodically">{% trans %}Change the password periodically{% endtrans %}</h3>
+					<p>{% trans %}Take the habit of changing your password for critically important data at least once every three months.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Use-antivirus-software">{% trans %}Use antivirus software{% endtrans %}</h3>
+					<p>{% trans %}Use the switched on antivirus on your computer and do not prevent it from updating.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Do-not-allow-browsers-to-save-passwords">{% trans %}Do not allow browsers to save passwords{% endtrans %}</h3>
+					<p>{% trans %}Do not use auto save in browsers, because saved passwords in the browser are easy to identify. In addition, a person who uses your device will also have access to your account.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Fake-pages-of-popular-sites">{% trans %}Fake pages of popular sites{% endtrans %}</h3>
+					<p>{% trans %}Be careful when entering your login and password on the sites, look at the address and make sure that this is the very site. At the beginning of the address you will see a confirmation that you are in a secure connection https: //.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Use-an-SSL-connection">{% trans %}Use an SSL connection{% endtrans %}</h3>
+					<p>{% trans %}Do not pass important information to unprotected HTTP or FTP protocols, because information in these connections can be easily intercepted.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Use-the-incognito-mode-in-your-browser">{% trans %}Use the incognito mode in your browser{% endtrans %}</h3>
+					<p>{% trans %}When you visit important for you sites, it is advisable to do it in incognito mode, so you can protect yourself from unwanted cookies and tracking.{% endtrans %}</p>
+				</li>
+				<li>
+					<h3 id="Be-more-careful-with-the-services-of-capturing-the-picture-from-the-screen">{% trans %}Be more careful with the services of capturing the picture from the screen{% endtrans %}</h3>
+					<p>{% trans %}Very often, all users of the Internet have access to screenshots made through such services.{% endtrans %}</p>
+				</li>					
+			</ul>
+		</section>
+{% endblock %}
+{% block javascripts %}{% endblock %}

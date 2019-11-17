@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="Our online random password generator helps create a strong passwords that is as secure as possible against hacking. Create complex passwords in a click!">
+        <meta name="keywords" content="password generator">
+        <meta name="author" content="Sainzaya Batkhuu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/img/icons/icon-152x152.png">
+        <link rel="apple-touch-icon" href="/img/icons/icon-144x144.png">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    
+        <div id="wrapper">
+            <header>
+                <div id="logo">
+                    <a href="{{ url("homepage") }}"><span>R</span><span>P</span><span>G</span></a>
+                </div>
+
+                
+                <div id="logo">
+                    <span>R</span><span>P</span><span>G</span>
+                </div>
+
+
+                
+                <div class="big-yellow-circle"></div>
+            </header>
+            <div class="content">
+                {% block body %}{% endblock %}
+            </div>
+            <footer>
+                <p class="textcenter">
+                <a href="{{ url("cookiespolicy") }}">Cookies Policy</a>
+                <a href="{{ url("privacypolicy") }}">Privacy Policy</a>
+                </p>
+                <p class="textcenter" style="color:black">RandomPasswordGenerator.org</p>			
+                <p class="textcenter" style="color:black">Copyright ©2019</p>
+            </footer>
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
