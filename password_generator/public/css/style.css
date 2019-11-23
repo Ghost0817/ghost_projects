@@ -241,6 +241,49 @@ h1 {
 #logo span:last-child {
     border-right: 2px solid #232c3a;
 }
+#lang {
+    position: absolute;
+    top: 30px;
+    right: 265px;
+    z-index: 10;
+    cursor: pointer;
+}
+#lang .dropdown span {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    border: 2px solid #232c3a;
+    padding: 8px 4px;
+	color: #232c3a;
+	padding-right: 30px;
+}
+#lang .dropdown span .arrow{
+	background: url(../images/expand-arrow.png) no-repeat center center;
+}
+
+#lang .dropdown {
+	position: relative;
+	display: inline-block;
+}
+#lang .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top:31px;
+}
+#lang .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+#lang  .dropdown:hover .dropdown-content {display: block;}
+#lang  .dropdown:hover span .arrow{
+	background: url(../images/collapse-arrow.png) no-repeat center center;
+}
 #wrapper {
 	width: 100%;
 	min-width: 320px;

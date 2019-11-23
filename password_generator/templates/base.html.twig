@@ -22,10 +22,18 @@
                 </div>
 
                 
-                <div id="logo">
-                    <span>R</span><span>P</span><span>G</span>
+                <div id="lang">
+                    <div class="dropdown" style="float:right;">
+                        <span>
+                            <image src="/images/mn.png" />
+                            <div class="arrow"></div>
+                        </span>
+                        <div class="dropdown-content">
+                            <a href="{{ path("homepage_local", {'_locale': "mn"}) }}"><image src="/images/mn.png" /> Mongolia</a>
+                            <a href="{{ path("homepage_local", {'_locale': "en"}) }}"><image src="/images/en.png" /> English</a>
+                        </div>
+                    </div>
                 </div>
-
 
                 
                 <div class="big-yellow-circle"></div>
