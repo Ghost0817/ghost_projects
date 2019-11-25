@@ -425,6 +425,25 @@ footer {
 	padding: 7px;
 	font-weight: bold;
 }
+.generator-middle {
+    display: none;
+}
+.generator-middle .btn-generate-container {
+    display: flex;
+    justify-content: center;
+}
+.generator-middle .btn-generate {
+    border-radius: 5px;
+    width: 66.875%;
+    max-width: 200px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #dfa500;
+    padding: 10px 0;
+    text-align: center;
+    margin: 30px 0;
+}
 .generator-bottom {
 	background: #232c3a;
 	display: flex;
@@ -664,5 +683,23 @@ section ol li h3 {
 	.content, .reviews, footer {
 		width: 100%;
 		margin: 0;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.generator-top-inner .password-options{
+		width: 100%;
+	}
+	.generator-bottom .btn-generate-container{
+		display: none;
+	}
+	#password{
+		width: 100%;
+		max-width: 700px;
+	}
+	.article.centered ul li{
+		text-align: center;
+	}
+	.generator-middle {
+		display: inherit;
 	}
 }
