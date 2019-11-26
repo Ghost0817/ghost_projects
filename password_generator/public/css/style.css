@@ -255,10 +255,12 @@ h1 {
     border: 2px solid #232c3a;
     padding: 8px 4px;
 	color: #232c3a;
-	padding-right: 30px;
 }
 #lang .dropdown span .arrow{
 	background: url(../images/expand-arrow.png) no-repeat center center;
+	display: inline-block;
+    height: 16px;
+    width: 16px;
 }
 
 #lang .dropdown {
@@ -266,13 +268,13 @@ h1 {
 	display: inline-block;
 }
 #lang .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  top:31px;
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	top:31px;
 }
 #lang .dropdown-content a {
 	color: black;
@@ -422,6 +424,25 @@ footer {
 	color: #232b39;
 	padding: 7px;
 	font-weight: bold;
+}
+.generator-middle {
+    display: none;
+}
+.generator-middle .btn-generate-container {
+    display: flex;
+    justify-content: center;
+}
+.generator-middle .btn-generate {
+    border-radius: 5px;
+    width: 66.875%;
+    max-width: 200px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #dfa500;
+    padding: 10px 0;
+    text-align: center;
+    margin: 30px 0;
 }
 .generator-bottom {
 	background: #232c3a;
@@ -641,7 +662,6 @@ section ol li h3 {
 	font-weight: 400;
 	color: #232c3a;
 }
-
 #alert {
     position: fixed;
     top: 0;
@@ -655,4 +675,31 @@ section ol li h3 {
     background: rgba(0,0,0,.75);
     color: #f00;
     font-size: 1.5em;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 790px) {
+
+	.content, .reviews, footer {
+		width: 100%;
+		margin: 0;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.generator-top-inner .password-options{
+		width: 100%;
+	}
+	.generator-bottom .btn-generate-container{
+		display: none;
+	}
+	#password{
+		width: 100%;
+		max-width: 700px;
+	}
+	.article.centered ul li{
+		text-align: center;
+	}
+	.generator-middle {
+		display: inherit;
+	}
 }
