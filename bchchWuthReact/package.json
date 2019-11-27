@@ -21,6 +21,8 @@
     "dependencies": {
         "@babel/plugin-proposal-class-properties": "^7.7.4",
         "@babel/plugin-transform-runtime": "^7.7.4",
+        "fusioncharts": "^3.14.1",
+        "react-fusioncharts": "^3.0.1",
         "react-router-dom": "^5.1.2"
     }
 }
