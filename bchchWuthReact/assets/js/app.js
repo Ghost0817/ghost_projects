@@ -1,12 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import logo from './logo.svg';
+import '../css/app.css';
 
-
-class Car extends React.Component {
-    render() {
-        return <h2>Hi, I am a Car!</h2>;
-    }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>js/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
-  
-  
-export default Car;
+
+export default App;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
@@ -51,13 +51,12 @@ const chartConfigs = {
   }
 };
 
-
 class ShoppingList extends React.Component {
     render() {
       return (
         <ReactFC {...chartConfigs} />
       );
     }
-  }
+}
 
-  export default ShoppingList;
+export default ShoppingList;
