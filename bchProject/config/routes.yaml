@@ -1,0 +1,12 @@
+#index:
+#    path: /
+#    controller: App\Controller\Entertaiment\DefaultController::index
+
+
+homepage:
+    path: /{_locale}
+    controller: App\Controller\Entertaiment\DefaultController::index
+    requirements:
+        _locale: '%app_locales%'
+    defaults:
+        _locale: '%locale%'

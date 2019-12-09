@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body id="{% block body_id %}{% endblock %}">
+
+    {% block header %}
+        <div class="extra-header">
+            <div class="container">
+                <div class="tw-intro-text">free online typing tutor.</div>
+                <a href="javascript:void(0);" class="topRetrievedMenu" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <nav id="TopExtraNav" class="tw-extra-nav">
+                    <ol class="tw-nav">
+                        <li class="tw-nav-item"><a href="#">Student Login</a></li>
+                        <li class="tw-nav-item"><a href="#">Teacher Login</a></li>
+                        <li class="tw-nav-item"><a href="#">Select Language</a></li>
+                        <li class="tw-nav-item">|</li>
+                        <li class="tw-nav-item"><a href="#">Support</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="tw-logo"></div>
+                <a href="javascript:void(0);" class="mainRetrievedMenu" onclick="mainFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <nav id="MainNav" class="tw-main-nav">
+                    <ol class="tw-nav">
+                        <li class="tw-nav-item"><a href="#">Home</a></li>
+                        <li class="tw-nav-item current-menu-item"><a href="#">Teacher Portal</a></li>
+                        <li class="tw-nav-item"><a href="#">Typing Tutor</a></li>
+                        <li class="tw-nav-item"><a href="#">Certifications</a></li>
+                        <li class="tw-nav-item"><a href="#">Blog</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        </div>
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
