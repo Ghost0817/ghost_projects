@@ -1,0 +1,147 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  html {
+      font-family: sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      height:100%;
+  }
+  body {
+      margin: 0;
+      height:100%;background-color:#f2f2f2;
+  }
+.extra-header{
+    min-height: 25px;
+    width: 100%;
+    margin: auto;
+    background-color: #2f2f2f;
+    padding-top: 6px;
+    display: inline-block;
+    color: #fff;
+}
+.main-header{
+    color: #333;
+    display: inline-block;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 3px -1px rgba(0,0,0,.1);
+    height: 41px;
+    line-height: 22px;
+    min-height: 41px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 4px;
+}
+.container{
+    width: 970px;
+    display: block;
+    margin: auto;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+}
+
+
+
+/* Start Header Section style sheet */
+.extra-header{}
+.extra-header .tw-intro-text{
+    text-align: left;
+    color: #fff;
+    font-size: 8pt;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: 700;
+    padding: 7px 3px 6px 3px;
+}
+.extra-header .tw-extra-nav{float: right;}
+.extra-header .topRetrievedMenu{display: none;
+    text-align: left;
+    color: #fff;
+    font-size: 8pt;
+    vertical-align: middle;
+    float: right;
+    font-weight: 700;
+    padding: 3px 5px 2px;}
+.extra-header .topRetrievedMenu i{
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 4px;
+}
+.extra-header .tw-extra-nav .tw-nav{margin: 0px;padding: 0px;}
+.extra-header .tw-extra-nav .tw-nav .tw-nav-item{
+    text-align: left;
+    color: #fff;
+    font-size: 8pt;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: 700;
+    padding: 7px 3px 6px 3px;
+}
+.extra-header .tw-extra-nav .tw-nav .tw-nav-item a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.main-header{}
+.main-header .tw-logo{
+    float: left;
+    display: block;
+    background: url(/images/logo.png) no-repeat;
+    width: 168px;
+    height: 41px;
+}
+.main-header .tw-main-nav{float: right;background-color: #fff;}
+.main-header .mainRetrievedMenu{display: none;}
+.main-header .tw-main-nav .tw-nav{margin: 0px;padding: 0px;}
+.main-header .tw-main-nav .tw-nav .tw-nav-item{
+    border-bottom: 4px solid #fff;
+    white-space: nowrap;
+    padding: 0;
+    float: left;
+    display: block;
+}
+.main-header .tw-main-nav .tw-nav .tw-nav-item.current-menu-item{border-bottom: 4px solid #25c6d0;}
+.main-header .tw-main-nav .tw-nav .tw-nav-item a{
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 37px;
+    line-height: 37px;
+    text-decoration: none;
+    zoom: 1;
+    position: relative;
+    text-align: center;
+    text-shadow: #fff 0 1px 1px;
+    color: #2f2f2f;
+    white-space: nowrap;
+    padding: 0 10px;
+    font-weight: 700;
+}
+.main-header .tw-main-nav .tw-nav .tw-nav-item a.removezaren{
+    background: url(/images/remove_ads_button_en.png) no-repeat center center;
+    height: 37px;
+    width: 105px;
+}
+
+
+@media only screen and (max-width: 600px){
+    .container{width: 100%;}
+    .extra-header .topRetrievedMenu{display: block;}
+    .main-header .mainRetrievedMenu{display: block;}
+}
+/* Ends Header Section style sheet */

@@ -3,8 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {# the CSS file lives at "public/css/blog.css" #}
+        <link href="{{ asset('css/student.css') }}" rel="stylesheet"/>
+        {% endblock %}
     </head>
+    
     <body id="{% block body_id %}{% endblock %}">
 
     {% block header %}
@@ -54,7 +58,21 @@
         </div>
         {% endblock %}
 
-        {% block body %}{% endblock %}
+        {# Starts content section #}
+        <div class="main-content">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {# Ends content section #}
+        
+        {# Starts footer section #}
+        <div class="main-content">
+            <div class="container">
+                Footer section
+            </div>
+        </div>
+        {# Ends footer section #}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {# the CSS file lives at "public/css/blog.css" #}
+        <link href="{{ asset('css/entertaiment.css') }}" rel="stylesheet"/>
+        {% endblock %}
     </head>
     <body id="{% block body_id %}{% endblock %}">
 
