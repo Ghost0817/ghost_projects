@@ -13,13 +13,13 @@
     {% block header %}
         <div class="extra-header">
             <div class="container">
-                <div class="tw-intro-text">free online typing tutor.</div>
+                <div class="tw-intro-text">{{'logo.subtitle'|trans}}</div>
                 <a href="javascript:void(0);" class="topRetrievedMenu" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
                 <nav id="TopExtraNav" class="tw-extra-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="#">Student Login</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_security_login', {'redirect_to': app.request.pathInfo}) }}">{{'student_login'|trans}}</a></li>
                         <li class="tw-nav-item"><a href="#">Teacher Login</a></li>
                         <li class="tw-nav-item"><a href="#">Select Language</a></li>
                         <li class="tw-nav-item">|</li>
@@ -36,11 +36,11 @@
                 </a>
                 <nav id="MainNav" class="tw-main-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="#">Home</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('homepage') }}">Home</a></li>
                         <li class="tw-nav-item current-menu-item"><a href="#">Teacher Portal</a></li>
                         <li class="tw-nav-item"><a href="#">Typing Tutor</a></li>
                         <li class="tw-nav-item"><a href="#">Certifications</a></li>
-                        <li class="tw-nav-item"><a href="#">Blog</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('blog_index') }}">Blog</a></li>
                     </ol>
                 </nav>
             </div>
@@ -48,7 +48,16 @@
         </div>
         {% endblock %}
 
-        {% block body %}{% endblock %}
+
+        {# Starts content section #}
+        <div class="main-content">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {# Ends content section #}
+
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

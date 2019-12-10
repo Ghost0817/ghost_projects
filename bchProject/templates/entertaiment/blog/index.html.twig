@@ -2,7 +2,8 @@
 
 {% block body_id 'blog_index' %}
 
-{% block main %}
+{% block body %}
+test
     {% for post in paginator.results %}
         <article class="post">
             <h2>
@@ -21,6 +22,9 @@
             {{ include('blog/_post_tags.html.twig') }}
         </article>
     {% else %}
+        <h1>Nothing Found</h1>
+        <hr/>
+        <div><p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p></div>
         <div class="well">{{ 'post.no_posts_found'|trans }}</div>
     {% endfor %}
 

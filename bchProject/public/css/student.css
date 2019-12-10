@@ -101,7 +101,7 @@
 .main-header .tw-logo{
     float: left;
     display: block;
-    background: url(/images/logo.png) no-repeat;
+    background: url(/images/logo.svg) no-repeat;
     width: 168px;
     height: 41px;
 }
