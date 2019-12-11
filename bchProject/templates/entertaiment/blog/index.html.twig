@@ -4,8 +4,8 @@
 
 {% block body %}
 <div class="body-container">
-<div class="header"><h2>Blog Name</h2></div>
-    <div class="main">
+    <div class="header"><h2>Blog Name</h2></div>
+    <div class="main-container">
         {% for post in paginator.results %}
             <article class="post">
                 <h2>
@@ -69,8 +69,7 @@
     <div class="sidebar">
         <div class="card">
             <h2>Bicheech.com Blog</h2>
-            <div>Keep up with Bicheech.com features, 
-            industry news, educational musings and more.</div>
+            <div>Keep up with Bicheech.com features, industry news, educational musings and more.</div>
         </div>
         <div class="card">
             <h3>Most Popular Posts</h3>

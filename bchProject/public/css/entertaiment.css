@@ -821,15 +821,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 
-#blog_page .body-container .header { grid-area: header; }
-#blog_page .body-container .main { grid-area: main; }
-#blog_page .body-container .sidebar { grid-area: rightbar;}
-#blog_page .body-container {
+.header { grid-area: header; }
+.main-container { grid-area: main; }
+.sidebar { grid-area: sidebar; padding-left: 20px;}
+.body-container {
 display: grid;
+grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 grid-template-areas:
     'header header header header header header'
-    'main main main main main rightbar';
-grid-gap: 20px;
+    'main main main main main sidebar';
+grid-gap: 0px;
 padding: 0px;
 }
 #searchform .search-field{

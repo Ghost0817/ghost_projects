@@ -1,31 +1,87 @@
-{% extends 'base.html.twig' %}
+{% extends 'entertaiment.html.twig' %}
 
 {% block javascripts %}
     {{ parent() }}
-    {{ encore_entry_script_tags('search') }}
 {% endblock %}
 
-{% block body_id 'blog_search' %}
+{% block body_id 'blog_page' %}
 
-{% block main %}
-    <form action="{{ path('blog_search') }}" method="get">
-        <div class="form-group">
-            <input name="q"
-                   class="form-control search-field"
-                   placeholder="{{ 'post.search_for'|trans }}"
-                   autocomplete="off"
-                   autofocus
-                   data-no-results-message="{{ 'post.search_no_results'|trans }}"
-            >
-        </div>
-    </form>
+{% block body %}
+    <div class="header"><h2>Blog Name</h2></div>
+    <div class="main-container">
+    Search Results for: test
+        {% for post in paginator.results %}
+            <article class="post">
+                <h2>
+                    <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
 
-    <div id="results">
+                <p class="post-metadata">
+                    <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+                    <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+                </p>
+
+                <p>{{ post.summary }}</p>
+
+                {{ include('blog/_post_tags.html.twig') }}
+            </article>
+        {% else %}
+            <h1>Nothing Found</h1>
+            <hr/>
+            <div><p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p></div>
+            <form action="{{ path('blog_search') }}" method="get" id="searchform">
+                <input name="q" type="text"
+                    class="search-field"
+                    placeholder="{{ 'post.search_for'|trans }}"
+                    autocomplete="off"
+                    autofocus
+                    data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                >
+                <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
+            </form>
+        {% endfor %}
+
     </div>
-{% endblock %}
-
-{% block sidebar %}
-    {{ parent() }}
-
-    {{ show_source_code(_self) }}
+    <div class="sidebar">
+        <div class="card">
+            <h2>Bicheech.com Blog</h2>
+            <div>Keep up with Bicheech.com features, industry news, educational musings and more.</div>
+        </div>
+        <div class="card">
+            <h3>Most Popular Posts</h3>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+            <hr/>
+            
+            <form action="{{ path('blog_search') }}" method="get" id="searchform">
+                <input name="q" type="text"
+                    class="search-field"
+                    placeholder="{{ 'post.search_for'|trans }}"
+                    autocomplete="off"
+                    autofocus
+                    data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                >
+                <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
+            </form>
+        </div>
+        <div class="card">
+            <h3>Post Topics</h3>
+            <ul>
+                <li><a href="/en/blog/tag/EDUCATION/">Education</a></li>
+                <li><a href="/en/blog/tag/ERGONOMICS/">Ergonomics</a></li>
+                <li><a href="/en/blog/tag/FUN_FACTS/">Fun facts</a></li>
+                <li><a href="/en/blog/tag/TYPING_SPEED/">Typing speed</a></li>
+                <li><a href="/en/blog/tag/TYPING_TIPS/">Typing tips</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+        </div>
+    </div>
 {% endblock %}
