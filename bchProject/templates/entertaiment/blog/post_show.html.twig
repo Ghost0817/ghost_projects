@@ -1,61 +1,100 @@
-{% extends 'base.html.twig' %}
+{% extends 'entertaiment.html.twig' %}
 
 {% block body_id 'blog_post_show' %}
 
-{% block main %}
-    <h1>{{ post.title }}</h1>
+{% block body %}
+<div class="body-container">
+    <div class="header"><h2>Blog Name</h2></div>
+    <div class="main-container">
+        
+        <h1>{{ post.title }}</h1>
 
-    <p class="post-metadata">
-        <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
-    </p>
+        <p class="post-metadata">
+            <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+            <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+        </p>
 
-    {{ post.content|md2html }}
+        {{ post.content }}
 
-    {{ include('blog/_post_tags.html.twig') }}
+        {{ include('entertaiment/blog/_post_tags.html.twig') }}
 
-    <div id="post-add-comment" class="well">
-        {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
-        their credentials (login + password) during this session. If they
-        are automatically logged via the 'Remember Me' functionality, they won't
-        be able to add a comment.
-        See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
-        #}
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {{ render(controller('App\\Controller\\BlogController::commentForm', {'id': post.id})) }}
-        {% else %}
-            <p>
-                <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
-                </a>
-                {{ 'post.to_publish_a_comment'|trans }}
-            </p>
-        {% endif %}
-    </div>
+        <div id="post-add-comment" class="well">
+            {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
+            their credentials (login + password) during this session. If they
+            are automatically logged via the 'Remember Me' functionality, they won't
+            be able to add a comment.
+            See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
+            #}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {{ render(controller('App\\Controller\\Entertaiment\\BlogController::commentForm', {'id': post.id})) }}
+            {% else %}
+                <p>
+                    <a class="btn btn-success" href="{{ path('student_security_login', {'redirect_to': app.request.pathInfo}) }}">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
+                    </a>
+                    {{ 'post.to_publish_a_comment'|trans }}
+                </p>
+            {% endif %}
+        </div>
 
-    <h3>
-        <i class="fa fa-comments" aria-hidden="true"></i> {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}
-    </h3>
+        <h3>
+            <i class="fa fa-comments" aria-hidden="true"></i> {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}
+        </h3>
 
-    {% for comment in post.comments %}
-        <div class="row post-comment">
-            <a name="comment_{{ comment.id }}"></a>
-            <h4 class="col-sm-3">
-                <strong>{{ comment.author.fullName }}</strong> {{ 'post.commented_on'|trans }}
-                {# it's not mandatory to set the timezone in localizeddate(). This is done to
-                   avoid errors when the 'intl' PHP extension is not available and the application
-                   is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
-                <strong>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
-            </h4>
-            <div class="col-sm-9">
-                {{ comment.content|md2html }}
+        {% for comment in post.comments %}
+            <div class="row post-comment">
+                <a name="comment_{{ comment.id }}"></a>
+                <h4 class="col-sm-3">
+                    <strong>{{ comment.author.fullName }}</strong> {{ 'post.commented_on'|trans }}
+                    {# it's not mandatory to set the timezone in localizeddate(). This is done to
+                    avoid errors when the 'intl' PHP extension is not available and the application
+                    is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
+                    <strong>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                </h4>
+                <div class="col-sm-9">
+                    {{ comment.content }}
+                </div>
             </div>
+        {% else %}
+            <div class="post-comment">
+                <p>{{ 'post.no_comments'|trans }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="sidebar">
+        <div class="card">
+            <h2>Bicheech.com Blog</h2>
+            <div>Keep up with Bicheech.com features, industry news, educational musings and more.</div>
         </div>
-    {% else %}
-        <div class="post-comment">
-            <p>{{ 'post.no_comments'|trans }}</p>
+        <div class="card">
+            <h3>Most Popular Posts</h3>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+            <hr/>
+            
+            <form action="{{ path('blog_search') }}" method="get" id="searchform">
+                <input name="q" type="text"
+                    class="search-field"
+                    placeholder="{{ 'post.search_for'|trans }}"
+                    autocomplete="off"
+                    autofocus
+                    data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                >
+                <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
+            </form>
         </div>
-    {% endfor %}
+        <div class="card">
+            {{ include('entertaiment/blog/_post_topics.html.twig') }}
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block sidebar %}
@@ -72,6 +111,5 @@
       to share common contents in different templates #}
     {{ parent() }}
 
-    {{ show_source_code(_self) }}
-    {{ include('blog/_rss.html.twig') }}
+    {{ include('entertaiment/blog/_rss.html.twig') }}
 {% endblock %}

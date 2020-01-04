@@ -1,0 +1,12 @@
+<h3>Post Topics</h3>
+<ul>
+    {% for tag in tags %}
+        <li>
+            <a href="{{ path('blog_index', {'tag': tag.slug == app.request.query.get('tag') ? null : tag.slug}) }}"
+            class="label label-{{ tag.slug == app.request.query.get('tag') ? 'success' : 'default' }}"
+            >
+                <i class="fa fa-tag"></i> {{ tag.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

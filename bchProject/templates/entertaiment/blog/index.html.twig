@@ -1,6 +1,6 @@
 {% extends 'entertaiment.html.twig' %}
 
-{% block body_id 'blog_page' %}
+{% block body_id 'blog_index' %}
 
 {% block body %}
 <div class="body-container">
@@ -8,11 +8,16 @@
     <div class="main-container">
         {% for post in paginator.results %}
             <article class="post">
+                <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                    <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{{ post.title }}" />
+                </a>
                 <h2>
                     <a href="{{ path('blog_post', {slug: post.slug}) }}">
                         {{ post.title }}
                     </a>
                 </h2>
+
+                {{ include('entertaiment/blog/_post_tags.html.twig') }}
 
                 <p class="post-metadata">
                     <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
@@ -20,8 +25,6 @@
                 </p>
 
                 <p>{{ post.summary }}</p>
-
-                {{ include('blog/_post_tags.html.twig') }}
             </article>
         {% else %}
             <h1>Nothing Found</h1>
@@ -73,11 +76,33 @@
         </div>
         <div class="card">
             <h3>Most Popular Posts</h3>
-            <div class="fakeimg">Image</div>
-            <br>
-            <div class="fakeimg">Image</div>
-            <br>
-            <div class="fakeimg">Image</div>
+            <ul>
+            {% for post in posts %}
+                <li class="popular-item" style="clear: both;
+    min-height: 90px;
+    border-bottom: 1px solid #f5f5f5;
+    list-style: none;
+    padding-top: 8px;
+    padding-bottom: 8px;">
+                    <div class="popular-img" style="background-image: url({{asset('/uploads/posts/' ~ post.imageEn )}});background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 80px;
+    height: 80px;">
+                        <a href="{{ path('blog_post', {slug: post.slug}) }}" style="display: block;
+    width: 80px;
+    height: 80px;">
+                        </a>
+                    </div>
+                    <div class="popular-title" style="font-weight: 700;color: #777;">
+                            <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                                {{ post.title }}
+                            </a>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+
             <hr/>
             
             <form action="{{ path('blog_search') }}" method="get" id="searchform">
@@ -92,14 +117,7 @@
             </form>
         </div>
         <div class="card">
-            <h3>Post Topics</h3>
-            <ul>
-                <li><a href="/en/blog/tag/EDUCATION/">Education</a></li>
-                <li><a href="/en/blog/tag/ERGONOMICS/">Ergonomics</a></li>
-                <li><a href="/en/blog/tag/FUN_FACTS/">Fun facts</a></li>
-                <li><a href="/en/blog/tag/TYPING_SPEED/">Typing speed</a></li>
-                <li><a href="/en/blog/tag/TYPING_TIPS/">Typing tips</a></li>
-            </ul>
+            {{ include('entertaiment/blog/_post_topics.html.twig') }}
         </div>
         <div class="card">
             <h3>Follow Me</h3>

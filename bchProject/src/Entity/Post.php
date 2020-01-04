@@ -91,6 +91,34 @@ class Post
     private $publishedAt;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image_mn", type="string", length=255, nullable=false)
+     */
+    private $imageMn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_en", type="string", length=255, nullable=false)
+     */
+    private $imageEn;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="mwidth", type="integer", nullable=false)
+     */
+    private $mwidth;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="mheight", type="integer", nullable=false)
+     */
+    private $mheight;
+
+    /**
      * @var User
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
@@ -171,6 +199,49 @@ class Post
     public function setPublishedAt(\DateTime $publishedAt): void
     {
         $this->publishedAt = $publishedAt;
+    }
+    
+    public function getImageMn(): ?string
+    {
+        return $this->imageMn;
+    }
+    public function setImageMn(string $imageMn): self
+    {
+        $this->imageMn = $imageMn;
+        return $this;
+    }
+
+    public function getImageEn(): ?string
+    {
+        return $this->imageEn;
+    }
+
+    public function setImageEn(string $imageEn): self
+    {
+        $this->imageEn = $imageEn;
+        return $this;
+    }
+
+    public function getMwidth(): ?int
+    {
+        return $this->mwidth;
+    }
+
+    public function setMwidth(int $mwidth): self
+    {
+        $this->mwidth = $mwidth;
+        return $this;
+    }
+
+    public function getMheight(): ?int
+    {
+        return $this->mheight;
+    }
+
+    public function setMheight(int $mheight): self
+    {
+        $this->mheight = $mheight;
+        return $this;
     }
 
     public function getAuthor(): ?User

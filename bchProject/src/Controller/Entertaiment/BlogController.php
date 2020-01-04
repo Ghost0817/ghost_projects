@@ -54,16 +54,23 @@ class BlogController extends AbstractController
         }
         $latestPosts = $posts->findLatest($page, $tag);
 
+        $currentTags = $tags->findAll();
+
+        $popularPosts = $posts->findRecent();
+
         // Every template name also has two extensions that specify the format and
         // engine for that template.
         // See https://symfony.com/doc/current/templating.html#template-suffix
         return $this->render('entertaiment/blog/index.'.$_format.'.twig', [
             'paginator' => $latestPosts,
+            'menu' => 'blog',
+            'tags' => $currentTags,
+            'posts' => $popularPosts
         ]);
     }
 
     /**
-     * @Route("/posts/{slug}", methods={"GET"}, name="blog_post")
+     * @Route("/read/{slug}", methods={"GET"}, name="blog_post")
      *
      * NOTE: The $post controller argument is automatically injected by Symfony
      * after performing a database query looking for a Post with the 'slug'
@@ -79,7 +86,13 @@ class BlogController extends AbstractController
         //
         // dump($post, $this->getUser(), new \DateTime());
 
-        return $this->render('entertaiment/blog/post_show.html.twig', ['post' => $post]);
+        $currentTags = $tags->findAll();
+
+        return $this->render('entertaiment/blog/post_show.html.twig', [
+            'menu' => 'blog',
+            'tags' => $currentTags,
+            'post' => $post
+        ]);
     }
 
     /**
