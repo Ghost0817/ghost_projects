@@ -1,5 +1,31 @@
 {% extends 'entertaiment.html.twig' %}
 
+{% block title %}{% trans %}Blog{% endtrans %}{% endblock %}
+
+{% block metas %}
+
+<!--<link rel="prev" href="https://blog.typing.com/">-->
+<!--<link rel="next" href="https://blog.typing.com/page/2/">-->
+
+<link rel="canonical" href="{{ app.request.uri }}">
+{% if app.request.attributes.get('_locale') == 'mn' %}
+    <meta property="og:locale" content="mn_MN">
+{% else %}
+    <meta property="og:locale" content="en_US">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta property="og:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta property="og:url" content="{{ app.request.uri }}">
+<meta property="og:site_name" content="{% trans %}Bicheech Blog{% endtrans %}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta name="twitter:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta name="twitter:site" content="@Bicheech_com">
+
+{% endblock %}
+
 {% block body_id 'entertaiment_default' %}
 
 {% block body %}
@@ -59,5 +85,4 @@
 
 
 
-<p></p>
 {% endblock %}

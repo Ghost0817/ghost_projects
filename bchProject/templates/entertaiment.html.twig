@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block metas %}{% endblock %}
         {% block stylesheets %}
         {# the CSS file lives at "public/css/blog.css" #}
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -61,6 +62,35 @@
         {# Ends content section #}
 
 
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <ul class="footer-menu">
+                        <li>{{ "now" | date('Y') }} © Bicheech.com</li>
+                        <li>|</li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li>|</li>
+                        <li><a href="#">T.O.S</a></li>
+                        <li>|</li>
+                        <li><a href="#">Blog</a></li>
+                        <li>|</li>
+                        <li><a href="#">Contact</a></li>
+                        <li>|</li>
+                        <li><a href="#">Support</a></li>
+                        <li>|</li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li>|</li>
+                        <li><a href="#">Typing Games</a></li>
+                        <li>|</li>
+                        <li><a href="#">Competitive Typing Game</a></li>
+                        <li>Follow Us</li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                {% block footer %}{% endblock %}
+            </div>
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

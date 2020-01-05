@@ -956,118 +956,118 @@ padding: 0px;
 
 
 /* Common Blog page elements
-   ------------------------------------------------------------------------- */
-   .post-metadata {
-    color: #b4bcc2;
-    font-size: 19px;
-    margin-bottom: 16px;
+  ------------------------------------------------------------------------- */
+  .post-metadata {
+  color: #b4bcc2;
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+.post-metadata .metadata {
+  margin-right: 1.5em;
+}
+
+.post-tags .label {
+  margin-right: 5px;
+}
+
+/* Page: 'Blog index'
+    ------------------------------------------------------------------------- */
+body#blog_index #main h1,
+body#blog_index #main p {
+  margin-bottom: 0.5em
+}
+
+body#blog_index article.post {
+  margin-bottom: 3em;
+}
+
+body#blog_index .post-metadata {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+body#blog_index .post-tags .label-default {
+  background-color: #e9ecec;
+  color: #6d8283;
+}
+body#blog_index .post-tags .label-default i {
+  color: #a3b2b2;
+}
+
+/* Page: 'Blog post show'
+    ------------------------------------------------------------------------- */
+body#blog_post_show #main h3 {
+  margin-bottom: 0.75em
+}
+
+body#blog_post_show .post-tags .label-default {
+  background-color: #e9ecec;
+  color: #6D8283;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: .4em 1em .5em;
+}
+body#blog_post_show .post-tags .label-default i {
+  color: #95A6A7;
+}
+
+body#blog_post_show #post-add-comment {
+  margin: 2em 0
+}
+
+body#blog_post_show #post-add-comment p {
+  margin-bottom: 0
+}
+
+body#blog_post_show #post-add-comment p a.btn {
+  margin-right: 0.5em
+}
+
+body#blog_post_show .post-comment {
+  margin-bottom: 2em
+}
+
+body#blog_post_show .post-comment h4 {
+  font-size: 13px;
+  line-height: 1.42857;
+  margin-top: 0
+}
+
+body#blog_post_show .post-comment h4 strong {
+  display: block
+}
+
+/* Page: 'Comment form error'
+    ------------------------------------------------------------------------- */
+body#comment_form_error h1.text-danger {
+  margin-bottom: 1em
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    width: 98%;
   }
-  .post-metadata .metadata {
-    margin-right: 1.5em;
-  }
-  
-  .post-tags .label {
-    margin-right: 5px;
-  }
-  
-  /* Page: 'Blog index'
-     ------------------------------------------------------------------------- */
-  body#blog_index #main h1,
-  body#blog_index #main p {
-    margin-bottom: 0.5em
-  }
-  
-  body#blog_index article.post {
-    margin-bottom: 3em;
-  }
-  
-  body#blog_index .post-metadata {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-  
-  body#blog_index .post-tags .label-default {
-    background-color: #e9ecec;
-    color: #6d8283;
-  }
-  body#blog_index .post-tags .label-default i {
-    color: #a3b2b2;
-  }
-  
-  /* Page: 'Blog post show'
-     ------------------------------------------------------------------------- */
-  body#blog_post_show #main h3 {
-    margin-bottom: 0.75em
-  }
-  
-  body#blog_post_show .post-tags .label-default {
-    background-color: #e9ecec;
-    color: #6D8283;
-    font-size: 16px;
-    margin-right: 10px;
-    padding: .4em 1em .5em;
-  }
-  body#blog_post_show .post-tags .label-default i {
-    color: #95A6A7;
-  }
-  
-  body#blog_post_show #post-add-comment {
-    margin: 2em 0
-  }
-  
-  body#blog_post_show #post-add-comment p {
-    margin-bottom: 0
-  }
-  
-  body#blog_post_show #post-add-comment p a.btn {
-    margin-right: 0.5em
-  }
-  
-  body#blog_post_show .post-comment {
-    margin-bottom: 2em
-  }
-  
-  body#blog_post_show .post-comment h4 {
-    font-size: 13px;
-    line-height: 1.42857;
-    margin-top: 0
-  }
-  
-  body#blog_post_show .post-comment h4 strong {
-    display: block
-  }
-  
-  /* Page: 'Comment form error'
-     ------------------------------------------------------------------------- */
-  body#comment_form_error h1.text-danger {
-    margin-bottom: 1em
-  }
-  
-  @media (min-width: 768px) and (max-width: 1200px) {
-    .container {
-      width: 98%;
-    }
-  }
-  
-  /* Page: 'Blog search'
-     ------------------------------------------------------------------------- */
-  body#blog_search #main h1,
-  body#blog_search #main p {
-    margin-bottom: 0.5em
-  }
-  
-  body#blog_search article.post:first-child {
-    margin-top: 2em;
-  }
-  
-  body#blog_search article.post {
-    margin-bottom: 2em;
-  }
-  
-  body#blog_search .post-metadata {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
+}
+
+/* Page: 'Blog search'
+    ------------------------------------------------------------------------- */
+body#blog_search #main h1,
+body#blog_search #main p {
+  margin-bottom: 0.5em
+}
+
+body#blog_search article.post:first-child {
+  margin-top: 2em;
+}
+
+body#blog_search article.post {
+  margin-bottom: 2em;
+}
+
+body#blog_search .post-metadata {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
 .post-tags a{
   display: inline-block;
   color: #fff;
@@ -1081,6 +1081,22 @@ padding: 0px;
   margin-bottom: 7px;
   text-decoration: none;
 }
+
+.main-footer,.main-footer .container{background-color: #b4b4b4;}
+.footer-content{padding-bottom: 30px;
+  padding-top: 30px;}
+.footer-menu{flex-grow: 1;
+  padding-right: 20px;list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.footer-menu li{margin-bottom: 0;
+  margin-right: 10px;display: block;float: left;font-size: 12px;
+  color: #FFF;
+}
+.footer-menu li a{color: #FFF;}
+
+  
 @media only screen and (max-width: 600px){
     .container{width: 100%;}
     .extra-header .topRetrievedMenu{display: block;}
