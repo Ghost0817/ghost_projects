@@ -9,11 +9,11 @@
         {% for post in paginator.results %}
             <article class="post">
                 <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                    <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{{ post.title }}" />
+                    <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}" />
                 </a>
                 <h2>
                     <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                        {{ post.title }}
+                        {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
                     </a>
                 </h2>
 

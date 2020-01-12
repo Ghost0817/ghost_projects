@@ -37,9 +37,8 @@
     <li>Lessons for All Skill Levels</li>
 </ul>
 
-<a href="#">Start Typing >></a>
-<a href="#">Tools for Teachers >></a>
-<a href="#">More Typing Tutor Info >></a>
+<a href="{{ path('student_index')}}">Start Typing >></a>
+<a href="{{ path('student_index')}}">Tools for Teachers >></a>
 
 <p>No Account? <a href="#">Sign up free >></a></p>
 
@@ -70,14 +69,14 @@
 {% for post in posts %}
     <article class="post">
         <a href="{{ path('blog_post', {slug: post.slug}) }}">
-            <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{{ post.title }}" />
+            <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}" />
         </a>
         <h2>
             <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                {{ post.title }}
+                {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
             </a>
         </h2>
-        <p>{{ post.summary }}</p>
+        <p>{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.summaryMn }}{% else %}{{ post.summaryEn }}{% endif %}</p>
         <small>posted {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }} <a href="#">read article >></a></small>
     </article>
 {% endfor %}

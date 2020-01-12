@@ -19,6 +19,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\LangRepository;
 
 /**
  * Controller used to manage blog contents in the public part of the site.
@@ -32,8 +33,20 @@ class DefaultController extends AbstractController
     /**
      * @Route("/start", methods={"GET"}, name="student_index")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, LangRepository $langsRep): Response
     {
-        return $this->render('student/course/index.html.twig', []);
+        if($this->getUser() && true === $this->isGranted('ROLE_STUDENT'))
+        {
+            $user = $this->getUser();
+            $user->setLastActivityAt(new \DateTime('now'));
+            $user->setLastAction('COURSE');
+            $em->persist($user);
+            $em->flush();
+        }
+        $langs = $langsRep->findAll();
+        return $this->render('student/course/index.html.twig', [
+            'entities' => $langs,
+            "menu"     => 1
+        ]);
     }
 }
