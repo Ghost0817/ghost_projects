@@ -77,7 +77,7 @@ class BlogController extends AbstractController
      * value given in the route.
      * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
      */
-    public function postShow(Post $post): Response
+    public function postShow(Post $post, TagRepository $tags): Response
     {
         // Symfony's 'dump()' function is an improved version of PHP's 'var_dump()' but
         // it's not available in the 'prod' environment to prevent leaking sensitive information.

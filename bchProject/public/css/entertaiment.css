@@ -832,6 +832,7 @@ grid-template-areas:
     'main main main main sidebar sidebar';
 grid-gap: 0px;
 padding: 0px;
+width: 100%;
 }
 #searchform .search-field{
     font-size: 14px;
@@ -957,7 +958,7 @@ padding: 0px;
 
 /* Common Blog page elements
   ------------------------------------------------------------------------- */
-  .post-metadata {
+.post-metadata {
   color: #b4bcc2;
   font-size: 19px;
   margin-bottom: 16px;
@@ -965,9 +966,32 @@ padding: 0px;
 .post-metadata .metadata {
   margin-right: 1.5em;
 }
-
 .post-tags .label {
   margin-right: 5px;
+}
+.post-image a img{
+  width: 100%;
+}
+.widget_categories{
+  padding: 0px;
+  margin: 0px;
+}
+.cat-item{
+  list-style-type: none;
+}
+.cat-item a{
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  display: block;
+  background-color: #25c6d0;
+  color: #ffffff;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  text-decoration: none;
 }
 
 /* Page: 'Blog index'
@@ -1079,6 +1103,101 @@ body#blog_search .post-metadata {
   line-height: 1;
   text-transform: uppercase;
   margin-bottom: 7px;
+  text-decoration: none;
+}
+/* pagenation */
+.pagination{
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+.pagination li{
+  float: left;
+  display: grid;
+}
+.pagination li a, .pagination li span{
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+
+}
+.pagination li.active a{
+  background-color: #4CAF50;
+  border: 1px solid #4CAF50;
+  color: #fff;
+}
+
+.widge-follow-link, .widge-popular{
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+.widge-follow-link li a {
+  text-decoration: none;
+}
+.widge-popular .popular-item{
+  clear: both;
+  min-height: 90px;
+  border-bottom: 1px solid #f5f5f5;
+  list-style: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: inline-block;
+  width: 100%;
+}
+.widge-popular .popular-item .popular-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 10px;
+}
+.widge-popular .popular-item .popular-title a{
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.fb-icon-bg{
+  background-color: #354f88;
+}
+.fb-bg{
+  background: #3b5998;
+}
+
+.twi-icon-bg{
+  background-color: #40a2d1;
+}
+.twi-bg{
+  background-color: #45b0e3;
+}
+
+.rss-icon-bg{
+  background-color: #C2521B;
+}
+.rss-bg{
+  background-color: #ff7e30;
+}
+.fb-icon-bg, .rss-icon-bg, .twi-icon-bg{
+  width: 41px;
+  height: 37px;
+  float: left;
+  color: #fff;
+  margin: 0 0 -37px 0;
+  padding: 9px 10px 5px 15px;
+}
+.fb-bg, .rss-bg, .twi-bg{
+  display: block;
+  height: 37px;
+  line-height: 37px;
+  margin: 0 0 10px 41px;
+  text-align: left;
+  vertical-align: middle;
+  color: #fff;
+  padding-left: 8%;
   text-decoration: none;
 }
 

@@ -7,14 +7,14 @@
     <div class="header"><h2>Blog Name</h2></div>
     <div class="main-container">
         
-        <h1>{{ post.title }}</h1>
+        <h1>{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}</h1>
 
         <p class="post-metadata">
             <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
             <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
         </p>
 
-        {{ post.content }}
+        {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.contentMn|raw }}{% else %}{{ post.contentEn|raw }}{% endif %}
 
         {{ include('entertaiment/blog/_post_tags.html.twig') }}
 

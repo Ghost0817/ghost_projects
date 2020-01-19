@@ -10,11 +10,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class FailbrowserController extends AbstractController
 {
     /**
-     * @Route("{_locale}/failbrowser", name="failbrowser", defaults={
-     *     "_locale": "mn"
-     * }, requirements={
-     *     "_locale": "mn|en"
-     * })
+     * @Route("failbrowser", name="failbrowser")
      */
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
