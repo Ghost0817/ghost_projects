@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="student_logged", indexes={@ORM\Index(name="student_id", columns={"student_id"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\StudentLoggedRepository")
  */
 class StudentLogged
 {
@@ -28,9 +29,9 @@ class StudentLogged
     private $sessDate;
 
     /**
-     * @var \Student
+     * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="Student")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="student_id", referencedColumnName="id")
      * })
@@ -60,12 +61,12 @@ class StudentLogged
         return $this;
     }
 
-    public function getStudent(): ?Student
+    public function getStudent(): ?User
     {
         return $this->student;
     }
 
-    public function setStudent(?Student $student): self
+    public function setStudent(?User $student): self
     {
         $this->student = $student;
 

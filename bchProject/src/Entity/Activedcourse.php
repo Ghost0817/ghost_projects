@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="activedcourse", indexes={@ORM\Index(name="student", columns={"student"}), @ORM\Index(name="category", columns={"category"}), @ORM\Index(name="lesson", columns={"lesson"}), @ORM\Index(name="lang", columns={"lang"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ActivedcourseRepository")
  */
 class Activedcourse
 {
@@ -54,7 +55,7 @@ class Activedcourse
     /**
      * @var \Student
      *
-     * @ORM\ManyToOne(targetEntity="Student")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="student", referencedColumnName="id")
      * })
@@ -102,12 +103,12 @@ class Activedcourse
         return $this;
     }
 
-    public function getStudent(): ?Student
+    public function getStudent(): ?User
     {
         return $this->student;
     }
 
-    public function setStudent(?Student $student): self
+    public function setStudent(?User $student): self
     {
         $this->student = $student;
 
