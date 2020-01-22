@@ -45,7 +45,7 @@ class StudentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'App\Entity\Student',
+            'data_class' => 'App\Form\Model\Student',
             'csrf_protection' => true,
             'csrf_field_name' => '_token',
             // a unique key to help generate the secret token
