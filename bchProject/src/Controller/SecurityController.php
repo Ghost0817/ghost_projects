@@ -17,8 +17,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Contracts\Translation\TranslatorInterface;
+
+use App\Entity\User;
+
+use App\Form\StudentType;
+
+use App\Repository\UserRepository;
 
 /**
  * Controller used to manage the application security.
@@ -38,7 +45,7 @@ class SecurityController extends AbstractController
     {
         // if user is already logged in, don't display the login page again
         if ($security->isGranted('ROLE_USER')) {
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('student_start');
         }
 
         // this statement solves an edge-case: if you change the locale in the login
@@ -228,14 +235,18 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/student/signup/", name="tutor_new_register")
+     * @Route("/student/signup/", name="student_register")
      * 
      */
-    public function register(Request $request, TranslatorInterface $translator, UserPasswordEncoderInterface $passwordEncoder, \Swift_Mailer $mailer)
+    public function register(Request $request, 
+    TranslatorInterface $translator, 
+    UserPasswordEncoderInterface $passwordEncoder, 
+    UserRepository $userRep,
+    \Swift_Mailer $mailer)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = new Student();
+        $entity = new User();
         $form   = $this->createForm(StudentType::class, $entity);
 
         $form->handleRequest($request);
