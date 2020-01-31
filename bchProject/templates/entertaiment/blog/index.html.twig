@@ -13,7 +13,7 @@
                         <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}" />
                     </a>
                 </div>
-                <h2>
+                <h2 class="post-title">
                     <a href="{{ path('blog_post', {slug: post.slug}) }}">
                         {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
                     </a>

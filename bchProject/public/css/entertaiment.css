@@ -1017,7 +1017,13 @@ body#blog_index .post-tags .label-default {
 body#blog_index .post-tags .label-default i {
   color: #a3b2b2;
 }
-
+body#blog_index article.post .post-title {
+  font-size: 24px;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 1.35;
+}
 /* Page: 'Blog post show'
     ------------------------------------------------------------------------- */
 body#blog_post_show #main h3 {
