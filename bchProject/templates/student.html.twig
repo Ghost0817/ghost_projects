@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{app.request.locale}}" xml:lang="{{app.request.locale}}" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -24,15 +24,15 @@
                         <li class="tw-nav-item">|</li>
                         <li class="tw-nav-item"><a href="#">Language & Keyboard</a></li>
                         <li class="tw-nav-item">|</li>
-                        <li class="tw-nav-item"><a href="#">Blog</a></li>
+                        <li class="tw-nav-item"><a href="{{path('blog_index')}}">Blog</a></li>
                         <!--<li class="tw-nav-item"><a href="#">Contact Us</a></li>-->
                         <li class="tw-nav-item">|</li>
                         <li class="tw-nav-item"><a href="#">Hall of Fames</a></li>
                         <li class="tw-nav-item">|</li>
-                        <li class="tw-nav-item"><a href="#">Teacher tools</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_login') }}">Teacher tools</a></li>
                         <li class="tw-nav-item">|</li>
-                        <li class="tw-nav-item"><a href="#">Login</a></li>
-                        <li class="tw-nav-item"><a href="#">Sign Up</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_login', {'redirect_to': app.request.pathInfo}) }}">Login</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_register') }}">Sign Up</a></li>
                     </ol>
                 </nav>
             </div>
@@ -45,12 +45,12 @@
                 </a>
                 <nav id="MainNav" class="tw-main-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="#">Course</a></li>
-                        <li class="tw-nav-item current-menu-item"><a href="#">Games</a></li>
-                        <li class="tw-nav-item"><a href="#">Tests</a></li>
-                        <li class="tw-nav-item"><a href="#">Statistics</a></li>
-                        <li class="tw-nav-item"><a href="#">Skins</a></li>
-                        <li class="tw-nav-item"><a href="#" class="removezaren"></a></li>
+                        <li class="tw-nav-item{% if menu == 1 %} current-menu-item{% endif %}"><a href="{{path('student_index')}}">Course</a></li>
+                        <li class="tw-nav-item{% if menu == 2 %} current-menu-item{% endif %}"><a href="#">Games</a></li>
+                        <li class="tw-nav-item{% if menu == 3 %} current-menu-item{% endif %}"><a href="#">Tests</a></li>
+                        <li class="tw-nav-item{% if menu == 4 %} current-menu-item{% endif %}"><a href="#">Statistics</a></li>
+                        <li class="tw-nav-item{% if menu == 5 %} current-menu-item{% endif %}"><a href="#">Skins</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('tutor_upgrade') }}" class="removezar{{app.request.locale}}"></a></li>
                     </ol>
                 </nav>
             </div>
@@ -67,7 +67,7 @@
         {# Ends content section #}
         
         {# Starts footer section #}
-        <div class="main-content">
+        <div class="footer-content">
             <div class="container">
                 Footer section
             </div>

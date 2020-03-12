@@ -1,6 +1,6 @@
 {% extends 'entertaiment.html.twig' %}
 
-{% block body_id 'blog_page' %}
+{% block body_id 'blog_index' %}
 
 {% block body %}
 <div class="body-container">
@@ -8,20 +8,25 @@
     <div class="main-container">
         {% for post in paginator.results %}
             <article class="post">
-                <h2>
+                <div class="post-image">
                     <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                        {{ post.title }}
+                        <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}" />
+                    </a>
+                </div>
+                <h2 class="post-title">
+                    <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                        {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
                     </a>
                 </h2>
+
+                {{ include('entertaiment/blog/_post_tags.html.twig') }}
 
                 <p class="post-metadata">
                     <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
                     <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
                 </p>
 
-                <p>{{ post.summary }}</p>
-
-                {{ include('blog/_post_tags.html.twig') }}
+                <p>{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.summaryMn }}{% else %}{{ post.summaryEn }}{% endif %}</p>
             </article>
         {% else %}
             <h1>Nothing Found</h1>
@@ -73,37 +78,69 @@
         </div>
         <div class="card">
             <h3>Most Popular Posts</h3>
-            <div class="fakeimg">Image</div>
-            <br>
-            <div class="fakeimg">Image</div>
-            <br>
-            <div class="fakeimg">Image</div>
+            <ul class="widge-popular">
+            {% for post in posts %}
+                <li class="popular-item">
+                    <div class="popular-img" style="background-image: url({{asset('/uploads/posts/' ~ post.imageEn )}});">
+                        <a href="{{ path('blog_post', {slug: post.slug}) }}" style="display: block;
+    width: 80px;
+    height: 80px;">
+                        </a>
+                    </div>
+                    <div class="popular-title" style="font-weight: 700;color: #777;">
+                            <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                                {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
+                            </a>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+
             <hr/>
             
             <form action="{{ path('blog_search') }}" method="get" id="searchform">
-                <input name="q" type="text"
+                <label><input name="q" type="text"
                     class="search-field"
                     placeholder="{{ 'post.search_for'|trans }}"
                     autocomplete="off"
                     autofocus
                     data-no-results-message="{{ 'post.search_no_results'|trans }}"
                 >
+                </label>
                 <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
             </form>
         </div>
         <div class="card">
-            <h3>Post Topics</h3>
-            <ul>
-                <li><a href="/en/blog/tag/EDUCATION/">Education</a></li>
-                <li><a href="/en/blog/tag/ERGONOMICS/">Ergonomics</a></li>
-                <li><a href="/en/blog/tag/FUN_FACTS/">Fun facts</a></li>
-                <li><a href="/en/blog/tag/TYPING_SPEED/">Typing speed</a></li>
-                <li><a href="/en/blog/tag/TYPING_TIPS/">Typing tips</a></li>
-            </ul>
+            {{ include('entertaiment/blog/_post_topics.html.twig') }}
         </div>
         <div class="card">
             <h3>Follow Me</h3>
-            <p>Some text..</p>
+            <ul class="widge-follow-link">
+                <li>
+                    <a href="#">
+                        <div class="twi-icon-bg">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                        <div class="twi-bg">Twitter</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="fb-icon-bg">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                        <div class="fb-bg">Facebook</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="rss-icon-bg">
+                            <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="rss-bg">RSS Feed</div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

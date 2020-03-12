@@ -11,6 +11,7 @@
 
 namespace App\Controller\Entertaiment;
 
+use App\Repository\PostRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -32,8 +33,31 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", methods={"GET"}, name="home_index")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, PostRepository $posts): Response
     {
-        return $this->render('entertaiment/home/index.html.twig', []);
+        $recentPosts = $posts->findRecent();
+
+        return $this->render('entertaiment/home/index.html.twig', [
+            'menu' => 'home',
+            'posts' => $recentPosts,
+        ]);
+    }
+    /**
+     * @Route("/teacher-portal", methods={"GET"}, name="teacher_index")
+     */
+    public function teacherportal(Request $request): Response
+    {
+        return $this->render('entertaiment/home/teacherportal.html.twig', [
+            'menu' => 'teacher portal',
+        ]);
+    }
+    /**
+     * @Route("/typing-tutor", methods={"GET"}, name="typing_tutor_index")
+     */
+    public function typingtutor(Request $request): Response
+    {
+        return $this->render('entertaiment/home/typingtutor.html.twig', [
+            'menu' => 'typing tutor',
+        ]);
     }
 }

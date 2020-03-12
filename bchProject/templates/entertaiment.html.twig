@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{app.request.locale}}" xml:lang="{{app.request.locale}}" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block metas %}{% endblock %}
         {% block stylesheets %}
         {# the CSS file lives at "public/css/blog.css" #}
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="{{ asset('css/entertaiment.css') }}" rel="stylesheet"/>
         {% endblock %}
     </head>
@@ -19,8 +23,8 @@
                 </a>
                 <nav id="TopExtraNav" class="tw-extra-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="{{ path('student_security_login', {'redirect_to': app.request.pathInfo}) }}">{{'student_login'|trans}}</a></li>
-                        <li class="tw-nav-item"><a href="#">Teacher Login</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_login', {'redirect_to': app.request.pathInfo}) }}">{{'student_login'|trans}}</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('teacher_index')}}">Teacher Login</a></li>
                         <li class="tw-nav-item"><a href="#">Select Language</a></li>
                         <li class="tw-nav-item">|</li>
                         <li class="tw-nav-item"><a href="#">Support</a></li>
@@ -36,11 +40,11 @@
                 </a>
                 <nav id="MainNav" class="tw-main-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="{{ path('homepage') }}">Home</a></li>
-                        <li class="tw-nav-item current-menu-item"><a href="#">Teacher Portal</a></li>
-                        <li class="tw-nav-item"><a href="#">Typing Tutor</a></li>
+                        <li class="tw-nav-item{% if menu == 'home' %} current-menu-item{% endif %}"><a href="{{ path('homepage') }}">Home</a></li>
+                        <li class="tw-nav-item{% if menu == 'teacher portal' %} current-menu-item{% endif %}"><a href="{{ path('teacher_index')}}">Teacher Portal</a></li>
+                        <li class="tw-nav-item{% if menu == 'typing tutor' %} current-menu-item{% endif %}"><a href="{{ path('typing_tutor_index')}}">Typing Tutor</a></li>
                         <li class="tw-nav-item"><a href="#">Certifications</a></li>
-                        <li class="tw-nav-item"><a href="{{ path('blog_index') }}">Blog</a></li>
+                        <li class="tw-nav-item{% if menu == 'blog' %} current-menu-item{% endif %}"><a href="{{ path('blog_index') }}">Blog</a></li>
                     </ol>
                 </nav>
             </div>
@@ -58,6 +62,35 @@
         {# Ends content section #}
 
 
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <ul class="footer-menu">
+                        <li>{{ "now" | date('Y') }} © Bicheech.com</li>
+                        <li>|</li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li>|</li>
+                        <li><a href="#">T.O.S</a></li>
+                        <li>|</li>
+                        <li><a href="#">Blog</a></li>
+                        <li>|</li>
+                        <li><a href="#">Contact</a></li>
+                        <li>|</li>
+                        <li><a href="#">Support</a></li>
+                        <li>|</li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li>|</li>
+                        <li><a href="#">Typing Games</a></li>
+                        <li>|</li>
+                        <li><a href="#">Competitive Typing Game</a></li>
+                        <li>Follow Us</li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                {% block footer %}{% endblock %}
+            </div>
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

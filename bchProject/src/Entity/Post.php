@@ -56,7 +56,15 @@ class Post
      * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
-    private $title;
+    private $titleEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank
+     */
+    private $titleMn;
 
     /**
      * @var string
@@ -72,7 +80,16 @@ class Post
      * @Assert\NotBlank(message="post.blank_summary")
      * @Assert\Length(max=255)
      */
-    private $summary;
+    private $summaryEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="post.blank_summary")
+     * @Assert\Length(max=255)
+     */
+    private $summaryMn;
 
     /**
      * @var string
@@ -81,7 +98,16 @@ class Post
      * @Assert\NotBlank(message="post.blank_content")
      * @Assert\Length(min=10, minMessage="post.too_short_content")
      */
-    private $content;
+    private $contentEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="post.blank_content")
+     * @Assert\Length(min=10, minMessage="post.too_short_content")
+     */
+    private $contentMn;
 
     /**
      * @var \DateTime
@@ -89,6 +115,34 @@ class Post
      * @ORM\Column(type="datetime")
      */
     private $publishedAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_mn", type="string", length=255, nullable=false)
+     */
+    private $imageMn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_en", type="string", length=255, nullable=false)
+     */
+    private $imageEn;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="mwidth", type="integer", nullable=false)
+     */
+    private $mwidth;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="mheight", type="integer", nullable=false)
+     */
+    private $mheight;
 
     /**
      * @var User
@@ -133,14 +187,24 @@ class Post
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleEn(): ?string
     {
-        return $this->title;
+        return $this->titleEn;
     }
 
-    public function setTitle(string $title): void
+    public function setTitleEn(string $titleEn): void
     {
-        $this->title = $title;
+        $this->titleEn = $titleEn;
+    }
+
+    public function getTitleMn(): ?string
+    {
+        return $this->titleMn;
+    }
+
+    public function setTitleMn(string $titleMn): void
+    {
+        $this->titleMn = $titleMn;
     }
 
     public function getSlug(): ?string
@@ -153,14 +217,24 @@ class Post
         $this->slug = $slug;
     }
 
-    public function getContent(): ?string
+    public function getContentEn(): ?string
     {
-        return $this->content;
+        return $this->contentEn;
     }
 
-    public function setContent(string $content): void
+    public function setContentEn(string $contentEn): void
     {
-        $this->content = $content;
+        $this->contentEn = $contentEn;
+    }
+
+    public function getContentMn(): ?string
+    {
+        return $this->contentMn;
+    }
+
+    public function setContent(string $contentMn): void
+    {
+        $this->contentMn = $contentMn;
     }
 
     public function getPublishedAt(): \DateTime
@@ -171,6 +245,49 @@ class Post
     public function setPublishedAt(\DateTime $publishedAt): void
     {
         $this->publishedAt = $publishedAt;
+    }
+    
+    public function getImageMn(): ?string
+    {
+        return $this->imageMn;
+    }
+    public function setImageMn(string $imageMn): self
+    {
+        $this->imageMn = $imageMn;
+        return $this;
+    }
+
+    public function getImageEn(): ?string
+    {
+        return $this->imageEn;
+    }
+
+    public function setImageEn(string $imageEn): self
+    {
+        $this->imageEn = $imageEn;
+        return $this;
+    }
+
+    public function getMwidth(): ?int
+    {
+        return $this->mwidth;
+    }
+
+    public function setMwidth(int $mwidth): self
+    {
+        $this->mwidth = $mwidth;
+        return $this;
+    }
+
+    public function getMheight(): ?int
+    {
+        return $this->mheight;
+    }
+
+    public function setMheight(int $mheight): self
+    {
+        $this->mheight = $mheight;
+        return $this;
     }
 
     public function getAuthor(): ?User
@@ -201,14 +318,24 @@ class Post
         $this->comments->removeElement($comment);
     }
 
-    public function getSummary(): ?string
+    public function getSummaryEn(): ?string
     {
-        return $this->summary;
+        return $this->summaryEn;
     }
 
-    public function setSummary(string $summary): void
+    public function setSummaryEn(string $summaryEn): void
     {
-        $this->summary = $summary;
+        $this->summaryEn = $summaryEn;
+    }
+
+    public function getSummaryMn(): ?string
+    {
+        return $this->summaryMn;
+    }
+
+    public function setSummaryMn(string $summaryMn): void
+    {
+        $this->summaryMn = $summaryMn;
     }
 
     public function addTag(Tag ...$tags): void

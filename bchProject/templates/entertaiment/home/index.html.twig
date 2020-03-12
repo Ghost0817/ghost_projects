@@ -1,7 +1,87 @@
 {% extends 'entertaiment.html.twig' %}
 
+{% block title %}{% trans %}Blog{% endtrans %}{% endblock %}
+
+{% block metas %}
+
+<!--<link rel="prev" href="https://blog.typing.com/">-->
+<!--<link rel="next" href="https://blog.typing.com/page/2/">-->
+
+<link rel="canonical" href="{{ app.request.uri }}">
+{% if app.request.attributes.get('_locale') == 'mn' %}
+    <meta property="og:locale" content="mn_MN">
+{% else %}
+    <meta property="og:locale" content="en_US">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta property="og:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta property="og:url" content="{{ app.request.uri }}">
+<meta property="og:site_name" content="{% trans %}Bicheech Blog{% endtrans %}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta name="twitter:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta name="twitter:site" content="@Bicheech_com">
+
+{% endblock %}
+
 {% block body_id 'entertaiment_default' %}
 
 {% block body %}
-content
+<h1>Learn to Type Free</h1>
+<p><strong>Bicheech</strong> is free online <strong>typing tutor</strong> & <strong>keyboarding tutorial</strong> for typists of all skill levels. Bicheech includes entertaining typing games, typing tests, and you can see your statistics information.</p>
+<ul>
+    <li>Completely Free</li>
+    <li>Perfect for All Ages</li>
+    <li>Lessons for All Skill Levels</li>
+</ul>
+
+<a href="{{ path('student_index')}}">Start Typing >></a>
+<a href="{{ path('student_index')}}">Tools for Teachers >></a>
+
+<p>No Account? <a href="#">Sign up free >></a></p>
+
+<h3>Begin Immediately. No Downloads. 100% Free.</h3>
+
+<h2>Teach Typing in Your School or Home</h2>
+
+<img src="">
+<h4>Teacher Portal</h4>
+<p>Bicheech's Teacher Portal provides all the necessary tools to report on, grade, and manage your students.</p>
+<a href="#">Sign Up Now >></a>
+
+<h4>Proven Curriculum</h4>
+<p>Improve students typing skills with our comprehensive, proven keyboarding lessons and games.</p>
+<a href="#">Start Teaching Now >></a>
+
+<h4>Absolutely Free</h4>
+<p>Save your school loads of money! Bicheech is, and always will be, 100% free.</p>
+<a href="#">Learn More >></a>
+
+<h5>Bicheech Blog
+<a href="#"><i class="fa fa-rss-square"></i></a>
+<a href="#"><i class="fa fa-facebook-square"></i></a>
+<a href="#"><i class="fa fa-twitter-square"></i></a>
+<h5>
+
+
+{% for post in posts %}
+    <article class="post">
+        <a href="{{ path('blog_post', {slug: post.slug}) }}">
+            <img src="{{ asset('/uploads/posts/' ~ post.imageEn ) }}" alt="{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}" />
+        </a>
+        <h2>
+            <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                {% if app.request.attributes.get('_locale') == 'mn' %}{{ post.titleMn }}{% else %}{{ post.titleEn }}{% endif %}
+            </a>
+        </h2>
+        <p>{% if app.request.attributes.get('_locale') == 'mn' %}{{ post.summaryMn }}{% else %}{{ post.summaryEn }}{% endif %}</p>
+        <small>posted {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }} <a href="#">read article >></a></small>
+    </article>
+{% endfor %}
+
+
+
+
 {% endblock %}

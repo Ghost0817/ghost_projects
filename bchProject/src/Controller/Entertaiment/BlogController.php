@@ -54,23 +54,30 @@ class BlogController extends AbstractController
         }
         $latestPosts = $posts->findLatest($page, $tag);
 
+        $currentTags = $tags->findAll();
+
+        $popularPosts = $posts->findRecent();
+
         // Every template name also has two extensions that specify the format and
         // engine for that template.
         // See https://symfony.com/doc/current/templating.html#template-suffix
         return $this->render('entertaiment/blog/index.'.$_format.'.twig', [
             'paginator' => $latestPosts,
+            'menu' => 'blog',
+            'tags' => $currentTags,
+            'posts' => $popularPosts
         ]);
     }
 
     /**
-     * @Route("/posts/{slug}", methods={"GET"}, name="blog_post")
+     * @Route("/read/{slug}", methods={"GET"}, name="blog_post")
      *
      * NOTE: The $post controller argument is automatically injected by Symfony
      * after performing a database query looking for a Post with the 'slug'
      * value given in the route.
      * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
      */
-    public function postShow(Post $post): Response
+    public function postShow(Post $post, TagRepository $tags): Response
     {
         // Symfony's 'dump()' function is an improved version of PHP's 'var_dump()' but
         // it's not available in the 'prod' environment to prevent leaking sensitive information.
@@ -79,7 +86,13 @@ class BlogController extends AbstractController
         //
         // dump($post, $this->getUser(), new \DateTime());
 
-        return $this->render('entertaiment/blog/post_show.html.twig', ['post' => $post]);
+        $currentTags = $tags->findAll();
+
+        return $this->render('entertaiment/blog/post_show.html.twig', [
+            'menu' => 'blog',
+            'tags' => $currentTags,
+            'post' => $post
+        ]);
     }
 
     /**
