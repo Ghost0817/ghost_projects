@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% trans %}Learn to Type | Free Typing Tutor | Typing Course{% endtrans %}{% endblock %} - Bicheech.com</title>
         {% block metas %}{% endblock %}
         {% block stylesheets %}
         {# the CSS file lives at "public/css/blog.css" #}
@@ -17,13 +17,13 @@
     {% block header %}
         <div class="extra-header">
             <div class="container">
-                <div class="tw-intro-text">{{'logo.subtitle'|trans}}</div>
+                <div class="tw-intro-text">{{'free online typing tutor.'|trans}}</div>
                 <a href="javascript:void(0);" class="topRetrievedMenu" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
                 <nav id="TopExtraNav" class="tw-extra-nav">
                     <ol class="tw-nav">
-                        <li class="tw-nav-item"><a href="{{ path('student_login', {'redirect_to': app.request.pathInfo}) }}">{{'student_login'|trans}}</a></li>
+                        <li class="tw-nav-item"><a href="{{ path('student_login', {'redirect_to': app.request.pathInfo}) }}">{{'Student Login'|trans}}</a></li>
                         <li class="tw-nav-item"><a href="{{ path('teacher_index')}}">Teacher Login</a></li>
                         <li class="tw-nav-item"><a href="#">Select Language</a></li>
                         <li class="tw-nav-item">|</li>

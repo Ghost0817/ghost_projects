@@ -2,11 +2,15 @@
 <html lang="{{app.request.locale}}" xml:lang="{{app.request.locale}}" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% trans %}Learn to Type | Free Typing Tutor | Typing Course{% endtrans %}{% endblock %} - Bicheech.com</title>
+        {% block metas %}{% endblock %}
+
         {% block stylesheets %}
         {# the CSS file lives at "public/css/blog.css" #}
         <link href="{{ asset('css/student.css') }}" rel="stylesheet"/>
         {% endblock %}
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+
     </head>
     
     <body id="{% block body_id %}{% endblock %}">

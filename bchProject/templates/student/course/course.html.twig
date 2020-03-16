@@ -20,7 +20,7 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}{% else %}
                 <div class="login_warring"><a class="close" onclick="jQuery(this).parent().hide()">x</a>{% trans %}You are not logged in. Typing progress will not be saved.{% endtrans %}</div>
             {% endif %}
-            <div class="container">
+            <div>
                 <section class="widget_accordion">
                     <ul>
                         {% set accordion_first = 1 %}

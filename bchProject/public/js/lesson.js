@@ -145,7 +145,6 @@ tw.lesson.prototype = {
 				} else {
 					this.win.Ext.fly('keyboardshell').toggle(!Ext.isIE);
 				}
-
 			}, this);
 		}
 
@@ -371,8 +370,10 @@ tw.lesson.prototype = {
 
 	setCharPosition: function(letter) {
 		if (this.layout == "Keyboard") {
+			console.log(letter);
+
 			console.log(this.keyboardData);
-			for (var i = 0; i < this.keyboardData[this.lang].length; i++) {
+			/*for (var i = 0; i < this.keyboardData[this.lang].length; i++) {
 					if (this.keyboardData[this.lang][i]["char"] == letter)
 					{
 							current.style.display     = this.keyboardData[this.lang][i]["currentstyledisplay"];
@@ -398,6 +399,7 @@ tw.lesson.prototype = {
 							lefthand.style.left       = this.keyboardData[this.lang][i]["lefthandstyleleft"];
 					}
 			}
+			*/
 		}
 	},
 

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Lobbies
  *
  * @ORM\Table(name="lobbies", indexes={@ORM\Index(name="exersice_id", columns={"exersice_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\LobbiesRepository")
  */
 class Lobbies
 {
@@ -217,6 +217,11 @@ class Lobbies
         $this->exersice = $exersice;
 
         return $this;
+    }
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
     }
 
 

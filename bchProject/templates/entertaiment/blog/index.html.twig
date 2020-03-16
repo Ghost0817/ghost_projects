@@ -1,4 +1,29 @@
 {% extends 'entertaiment.html.twig' %}
+{% block title %}{% trans %}Blog{% endtrans %}{% endblock %}
+
+{% block metas %}
+
+<!--<link rel="prev" href="https://blog.typing.com/">-->
+<!--<link rel="next" href="https://blog.typing.com/page/2/">-->
+
+<link rel="canonical" href="{{ app.request.uri }}">
+{% if app.request.attributes.get('_locale') == 'mn' %}
+    <meta property="og:locale" content="mn_MN">
+{% else %}
+    <meta property="og:locale" content="en_US">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta property="og:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta property="og:url" content="{{ app.request.uri }}">
+<meta property="og:site_name" content="{% trans %}Bicheech Blog{% endtrans %}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="{% trans %}The web's most popular, free online typing tutor{% endtrans %}">
+<meta name="twitter:title" content="{% trans %}Bicheech Blog{% endtrans %} - Bicheech.com">
+<meta name="twitter:site" content="@Bicheech_com">
+
+{% endblock %}
 
 {% block body_id 'blog_index' %}
 
@@ -35,10 +60,10 @@
             <form action="{{ path('blog_search') }}" method="get" id="searchform">
                 <input name="q" type="text"
                     class="search-field"
-                    placeholder="{{ 'post.search_for'|trans }}"
+                    placeholder="{{ 'Search for...'|trans }}"
                     autocomplete="off"
                     autofocus
-                    data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                    data-no-results-message="{{ 'No results found'|trans }}"
                 >
                 <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
             </form>
@@ -48,23 +73,23 @@
             <div class="navigation text-center">
                 <ul class="pagination">
                     {% if paginator.hasPreviousPage %}
-                        <li class="prev"><a href="{{ path('blog_index_paginated', {page: paginator.previousPage}) }}" rel="previous"><i class="fa fw fa-long-arrow-left"></i> {{ 'paginator.previous'|trans }}</a></li>
+                        <li class="prev"><a href="{{ path('blog_index_paginated', {page: paginator.previousPage}) }}" rel="previous"><i class="fa fw fa-long-arrow-left"></i> {{ 'Previous'|trans }}</a></li>
                     {% else %}
-                        <li class="prev disabled"><span><i class="fa fw fa-arrow-left"></i> {{ 'paginator.previous'|trans }}</span></li>
+                        <li class="prev disabled"><span><i class="fa fw fa-arrow-left"></i> {{ 'Previous'|trans }}</span></li>
                     {% endif %}
 
                     {% for i in 1..paginator.lastPage %}
                         {% if i == paginator.currentPage %}
-                            <li class="active"><span>{{ i }} <span class="sr-only">{{ 'paginator.current'|trans }}</span></span></li>
+                            <li class="active"><span>{{ i }} <span class="sr-only">{{ '(current)'|trans }}</span></span></li>
                         {% else %}
                             <li><a href="{{ path('blog_index_paginated', {page: i}) }}">{{ i }}</a></li>
                         {% endif %}
                     {% endfor %}
 
                     {% if paginator.hasNextPage %}
-                        <li class="next"><a href="{{ path('blog_index_paginated', {page: paginator.nextPage}) }}" rel="next">{{ 'paginator.next'|trans }} <i class="fa fw fa-arrow-right"></i></a></li>
+                        <li class="next"><a href="{{ path('blog_index_paginated', {page: paginator.nextPage}) }}" rel="next">{{ 'Next'|trans }} <i class="fa fw fa-arrow-right"></i></a></li>
                     {% else %}
-                        <li class="next disabled"><span>{{ 'paginator.next'|trans }} <i class="fa fw fa-arrow-right"></i></span></li>
+                        <li class="next disabled"><span>{{ 'Next'|trans }} <i class="fa fw fa-arrow-right"></i></span></li>
                     {% endif %}
                 </ul>
             </div>
@@ -101,10 +126,10 @@
             <form action="{{ path('blog_search') }}" method="get" id="searchform">
                 <label><input name="q" type="text"
                     class="search-field"
-                    placeholder="{{ 'post.search_for'|trans }}"
+                    placeholder="{{ 'Search for...'|trans }}"
                     autocomplete="off"
                     autofocus
-                    data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                    data-no-results-message="{{ 'No results found'|trans }}"
                 >
                 </label>
                 <input type="submit" class="btn btn--a submit" name="submit" id="searchsubmit" value="Search">
@@ -125,7 +150,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/bicheechcom/">
                         <div class="fb-icon-bg">
                             <i class="fa fa-facebook"></i>
                         </div>
@@ -133,7 +158,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ path('blog_rss', app.request.query.all) }}">
                         <div class="rss-icon-bg">
                             <i class="fa fa-rss"></i>
                         </div>

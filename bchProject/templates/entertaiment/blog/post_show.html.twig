@@ -29,7 +29,7 @@
                 {{ render(controller('App\\Controller\\Entertaiment\\BlogController::commentForm', {'id': post.id})) }}
             {% else %}
                 <p>
-                    <a class="btn btn-success" href="{{ path('student_security_login', {'redirect_to': app.request.pathInfo}) }}">
+                    <a class="btn btn-success" href="{{ path('student_login', {'redirect_to': app.request.pathInfo}) }}">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
                     </a>
                     {{ 'post.to_publish_a_comment'|trans }}
