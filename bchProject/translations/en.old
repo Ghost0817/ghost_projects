@@ -214,10 +214,6 @@
                 <source>action.back_to_list</source>
                 <target>Back to the post list</target>
             </trans-unit>
-            <trans-unit id="action.publish_comment">
-                <source>action.publish_comment</source>
-                <target>Publish comment</target>
-            </trans-unit>
             <trans-unit id="action.sign_in">
                 <source>action.sign_in</source>
                 <target>Sign in</target>
@@ -468,15 +464,6 @@
             <trans-unit id="info.change_password">
                 <source>info.change_password</source>
                 <target>After changing your password, you will be logged out of the application.</target>
-            </trans-unit>
-
-            <trans-unit id="rss.title">
-                <source>rss.title</source>
-                <target>Symfony Demo blog</target>
-            </trans-unit>
-            <trans-unit id="rss.description">
-                <source>rss.description</source>
-                <target>Most recent posts published on the Symfony Demo blog</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

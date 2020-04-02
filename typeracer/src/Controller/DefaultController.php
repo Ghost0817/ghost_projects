@@ -75,7 +75,7 @@ class DefaultController extends AbstractController
                 'finished' => $lobby->getFinished(),
                 'started_at' => $lobby->getStartedAt(),
                 'finished_at' => $lobby->getFinishedAt(),
-                'exersice' => $lobby->getExersice()->getContent()
+                'exercise' => $lobby->getExersice()->getContent()
             ];
         #}
         
